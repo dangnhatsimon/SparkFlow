@@ -4,23 +4,32 @@ x-spark-common: &spark-common
   image: bitnami/spark:latest
   volumes:
     - ./jobs:/opt/bitnami/spark/jobs
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ./requirements.txt:/requirements.txt
   networks:
-    - airflow
+    - spark-airflow
 
 x-airflow-common: &airflow-common
   build:
     context: .
     dockerfile: Dockerfile
   env_file:
-    - airflow.env
+    - ./config/airflow.env
   volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
     - ./jobs:/opt/airflow/jobs
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
+    - ./config:/opt/airflow/config
+    - ./requirements.txt:/requirements.txt
   depends_on:
-    - postgres
+    &airflow-common-depends-on
+    redis:
+      condition: service_healthy
+    postgres:
+      condition: service_healthy
   networks:
-    - airflow
+    - spark-airflow
 
 services:
   spark-master:
@@ -72,20 +81,61 @@ services:
       - POSTGRES_USER=airflow
       - POSTGRES_PASSWORD=airflow
       - POSTGRES_DB=airflow
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
     networks:
-      - airflow
+      - spark-airflow
+
+  redis:
+    # Redis is limited to 7.2-bookworm due to licencing change
+    # https://redis.io/blog/redis-adopts-dual-source-available-licensing/
+    image: redis:7.2-bookworm
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 50
+      start_period: 30s
+    restart: always
+    networks:
+      - spark-airflow
 
   webserver:
     <<: *airflow-common
     command: webserver
     ports:
       - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
     depends_on:
-      - scheduler
+      <<: *airflow-common-depends-on
+      scheduler:
+        condition: service_healthy
 
   scheduler:
     <<: *airflow-common
-    command: bash -c "airflow db migrate && airflow users create --username admin --firstname Nhat --lastname Dang --role Admin --email dangnhatsimon@gmail.com --password admin && airflow scheduler"
+    command: >
+      bash -c "airflow db migrate && airflow users create --username airflow --firstname Nhat --lastname Dang --role Admin --email dangnhatsimon@gmail.com --password airflow && airflow scheduler"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+    depends_on:
+      <<: *airflow-common-depends-on
 
 networks:
-  airflow:
+  spark-airflow:
+    driver: bridge
