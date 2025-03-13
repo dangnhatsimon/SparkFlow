@@ -6,6 +6,8 @@ x-spark-common: &spark-common
     - ./jobs:/opt/bitnami/spark/jobs
     - /var/run/docker.sock:/var/run/docker.sock
     - ./requirements.txt:/requirements.txt
+    - ./data:/mnt/airflow_data 
+    - ./jars:/opt/bitnami/spark/jars
   networks:
     - spark-airflow
 
