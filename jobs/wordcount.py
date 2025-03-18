@@ -4,6 +4,12 @@ from pyspark import SparkContext
 
 conf = SparkConf()
 conf.setMaster("local[*]").setAppName("PythonWordCount")
+conf.set("spark.driver.cores", 2)
+conf.set("spark.driver.memory", "2g")
+conf.set("spark.executor.memory", "1g")
+conf.set("spark.submit.deployMode", "client")
+conf.set("spark.log.level", "ALL")
+conf.set("spark.jars.packages", None)
 
 sc = SparkContext.getOrCreate(conf=conf)
 
