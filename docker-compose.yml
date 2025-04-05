@@ -8,6 +8,7 @@ x-spark-common: &spark-common
     - ./requirements.txt:/requirements.txt
     - ./data:/mnt/airflow_data 
     - ./jars:/opt/bitnami/spark/jars
+    - ./config:/opt/bitnami/spark/config
   networks:
     - spark-airflow
 
