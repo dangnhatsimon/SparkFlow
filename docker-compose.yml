@@ -1,30 +1,55 @@
 version: '3'
 
+
 x-spark-common: &spark-common
-  image: bitnami/spark:latest
+  build:
+    context: .
+    dockerfile: ./spark/Dockerfile
   volumes:
-    - ./jobs:/opt/bitnami/spark/jobs
+    - ./spark/jobs:/opt/bitnami/spark/jobs
+    - ./spark/config:/opt/bitnami/spark/conf
+    - ./spark/datasets:/opt/bitnami/spark/datasets
     - /var/run/docker.sock:/var/run/docker.sock
     - ./requirements.txt:/requirements.txt
-    - ./data:/mnt/airflow_data 
-    - ./jars:/opt/bitnami/spark/jars
-    - ./config:/opt/bitnami/spark/config
   networks:
     - spark-airflow
+
+
+x-spark-worker: &worker
+  <<: *spark-common
+  command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+  depends_on:
+    - spark-master
+  environment:
+    SPARK_MODE: worker
+    SPARK_WORKER_CORES: ${SPARK_WORKER_CORES:-4}
+    SPARK_WORKER_MEMORY: ${SPARK_WORKER_MEMORY:-4g}
+    SPARK_MASTER_URL: spark://spark-master:7077
+    SPARK_RPC_AUTHENTICATION_ENABLED: no
+    SPARK_RPC_ENCRYPTION_ENABLED: no
+    SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: no
+    SPARK_SSL_ENABLED: no
+    SPARK_METRICS_ENABLED: true
+  healthcheck:
+    test: [ "CMD", "curl", "-f", "http://localhost:8081" ]
+    interval: 10s
+    timeout: 5s
+    retries: 5
+
 
 x-airflow-common: &airflow-common
   build:
     context: .
-    dockerfile: Dockerfile
+    dockerfile: ./airflow/Dockerfile
   env_file:
-    - ./config/airflow.env
+    - ./airflow/config/airflow.env
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - ./jobs:/opt/airflow/jobs
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./config:/opt/airflow/config
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/config:/opt/airflow/config
     - ./requirements.txt:/requirements.txt
+    - ./spark/jobs:/opt/airflow/jobs
   depends_on:
     &airflow-common-depends-on
     redis:
@@ -37,6 +62,8 @@ x-airflow-common: &airflow-common
 services:
   spark-master:
     <<: *spark-common
+    container_name: sparkflow-spark-master
+    hostname: sparkflow-spark-master
     command: bin/spark-class org.apache.spark.deploy.master.Master
     ports:
       - "9090:8080"
@@ -47,36 +74,19 @@ services:
       - SPARK_RPC_ENCRYPTION_ENABLED=no
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
+      - SPARK_METRICS_ENABLED=true
 
   spark-worker-1:
-    <<: *spark-common
-    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
-    depends_on:
-      - spark-master
-    environment:
-      SPARK_MODE: worker
-      SPARK_WORKER_CORES: 2
-      SPARK_WORKER_MEMORY: 1g
-      SPARK_MASTER_URL: spark://spark-master:7077
-      SPARK_RPC_AUTHENTICATION_ENABLED: no
-      SPARK_RPC_ENCRYPTION_ENABLED: no
-      SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: no
-      SPARK_SSL_ENABLED: no
+    <<: *worker
+    container_name: sparkflow-spark-worker-1
+    ports:
+      - "8081:8081"
   
   spark-worker-2:
-    <<: *spark-common
-    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
-    depends_on:
-      - spark-master
-    environment:
-      SPARK_MODE: worker
-      SPARK_WORKER_CORES: 2
-      SPARK_WORKER_MEMORY: 1g
-      SPARK_MASTER_URL: spark://spark-master:7077
-      SPARK_RPC_AUTHENTICATION_ENABLED: no
-      SPARK_RPC_ENCRYPTION_ENABLED: no
-      SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: no
-      SPARK_SSL_ENABLED: no
+    <<: *worker
+    container_name: sparkflow-spark-worker-2
+    ports:
+      - "8082:8081"
 
   postgres:
     image: postgres:14.0
