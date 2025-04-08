@@ -1,6 +1,5 @@
 version: '3'
 
-
 x-spark-common: &spark-common
   build:
     context: .
@@ -8,12 +7,11 @@ x-spark-common: &spark-common
   volumes:
     - ./spark/jobs:/opt/bitnami/spark/jobs
     - ./spark/config:/opt/bitnami/spark/conf
-    - ./spark/datasets:/opt/bitnami/spark/datasets
+    - ./datasets:/opt/bitnami/spark/datasets
     - /var/run/docker.sock:/var/run/docker.sock
     - ./requirements.txt:/requirements.txt
   networks:
     - spark-airflow
-
 
 x-spark-worker: &worker
   <<: *spark-common
@@ -35,7 +33,6 @@ x-spark-worker: &worker
     interval: 10s
     timeout: 5s
     retries: 5
-
 
 x-airflow-common: &airflow-common
   build:
@@ -152,3 +149,7 @@ services:
 networks:
   spark-airflow:
     driver: bridge
+
+volumes:
+  spark-events:
+    external: true

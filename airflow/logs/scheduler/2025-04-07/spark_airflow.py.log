@@ -1,0 +1,290 @@
+[2025-04-07T02:08:55.714+0000] {processor.py:186} INFO - Started process (PID=212) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:08:55.714+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:08:55.715+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:55.715+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:08:55.809+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:08:55.983+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:55.982+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:spark_airflow
+[2025-04-07T02:08:55.990+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:55.990+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:spark_airflow
+[2025-04-07T02:08:55.995+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:55.995+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:spark_airflow
+[2025-04-07T02:08:56.000+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.000+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:spark_airflow
+[2025-04-07T02:08:56.005+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.005+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:spark_airflow
+[2025-04-07T02:08:56.009+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.009+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:spark_airflow
+[2025-04-07T02:08:56.013+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.013+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:spark_airflow
+[2025-04-07T02:08:56.014+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.014+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:08:56.022+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.022+0000] {dag.py:3262} INFO - Creating ORM DAG for spark_airflow
+[2025-04-07T02:08:56.030+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:08:56.030+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:08:56.043+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.334 seconds
+[2025-04-07T02:09:26.198+0000] {processor.py:186} INFO - Started process (PID=223) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:26.199+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:09:26.201+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:26.201+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:26.279+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:26.297+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:26.297+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:09:26.321+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:26.320+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:09:26.341+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.147 seconds
+[2025-04-07T02:09:56.500+0000] {processor.py:186} INFO - Started process (PID=234) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:56.500+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:09:56.502+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:56.502+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:56.578+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:09:56.596+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:56.595+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:09:56.615+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:09:56.615+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:09:56.735+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.240 seconds
+[2025-04-07T02:10:26.907+0000] {processor.py:186} INFO - Started process (PID=245) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:26.907+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:10:26.910+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:26.909+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:26.985+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:27.004+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:27.004+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:10:27.126+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:27.126+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:10:27.139+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.237 seconds
+[2025-04-07T02:10:57.326+0000] {processor.py:186} INFO - Started process (PID=256) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:57.327+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:10:57.328+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:57.328+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:57.402+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:10:57.420+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:57.420+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:10:57.540+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:10:57.540+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:10:57.553+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.232 seconds
+[2025-04-07T02:11:27.738+0000] {processor.py:186} INFO - Started process (PID=267) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:11:27.739+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:11:27.741+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:11:27.740+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:11:27.814+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:11:27.929+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:11:27.929+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:11:27.946+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:11:27.946+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:11:28.072+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.338 seconds
+[2025-04-07T02:12:06.536+0000] {processor.py:186} INFO - Started process (PID=213) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:06.536+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:12:06.538+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.537+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:06.621+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:06.793+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.793+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:spark_airflow
+[2025-04-07T02:12:06.799+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.799+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:spark_airflow
+[2025-04-07T02:12:06.804+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.803+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:spark_airflow
+[2025-04-07T02:12:06.808+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.808+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:spark_airflow
+[2025-04-07T02:12:06.813+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.812+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:spark_airflow
+[2025-04-07T02:12:06.817+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.817+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:spark_airflow
+[2025-04-07T02:12:06.821+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.821+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:spark_airflow
+[2025-04-07T02:12:06.822+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.822+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:12:06.830+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.830+0000] {dag.py:3262} INFO - Creating ORM DAG for spark_airflow
+[2025-04-07T02:12:06.838+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:06.838+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:12:06.851+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.319 seconds
+[2025-04-07T02:12:37.005+0000] {processor.py:186} INFO - Started process (PID=224) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:37.006+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:12:37.008+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:37.008+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:37.082+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:12:37.100+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:37.100+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:12:37.119+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:12:37.119+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:12:37.135+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.134 seconds
+[2025-04-07T02:13:07.317+0000] {processor.py:186} INFO - Started process (PID=235) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:07.318+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:13:07.320+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:07.319+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:07.392+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:07.410+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:07.410+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:13:07.429+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:07.429+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:13:07.553+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.241 seconds
+[2025-04-07T02:13:37.737+0000] {processor.py:186} INFO - Started process (PID=246) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:37.738+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:13:37.740+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:37.739+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:37.812+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:13:37.829+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:37.829+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:13:37.943+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:13:37.943+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:13:37.957+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.224 seconds
+[2025-04-07T02:14:08.108+0000] {processor.py:186} INFO - Started process (PID=330) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:08.109+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:14:08.111+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:08.111+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:08.183+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:08.201+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:08.200+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:14:08.309+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:08.309+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:14:08.324+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.220 seconds
+[2025-04-07T02:14:38.515+0000] {processor.py:186} INFO - Started process (PID=341) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:38.516+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:14:38.518+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:38.518+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:38.591+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:38.702+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:38.701+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:14:38.719+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:38.719+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:14:38.732+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.222 seconds
+[2025-04-07T02:14:59.632+0000] {processor.py:186} INFO - Started process (PID=346) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:59.633+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:14:59.635+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:59.635+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:59.724+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:14:59.833+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:59.832+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:14:59.849+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:14:59.849+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:14:59.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.239 seconds
+[2025-04-07T02:15:30.019+0000] {processor.py:186} INFO - Started process (PID=357) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:30.019+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:15:30.021+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:30.021+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:30.189+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:30.204+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:30.204+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:15:30.220+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:30.220+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:15:30.234+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.219 seconds
+[2025-04-07T02:15:58.193+0000] {processor.py:186} INFO - Started process (PID=369) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:58.193+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:15:58.196+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:58.195+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:58.365+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:15:58.440+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:58.440+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:15:58.456+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:15:58.456+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:15:58.472+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.284 seconds
+[2025-04-07T02:16:28.525+0000] {processor.py:186} INFO - Started process (PID=380) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:28.526+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:16:28.528+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:28.528+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:28.725+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:28.748+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:28.747+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:16:28.768+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:28.768+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:16:28.785+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.264 seconds
+[2025-04-07T02:16:58.818+0000] {processor.py:186} INFO - Started process (PID=482) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:58.818+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:16:58.820+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:58.820+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:58.893+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:16:58.911+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:58.910+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:16:59.022+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:16:59.021+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:16:59.034+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.223 seconds
+[2025-04-07T02:17:29.148+0000] {processor.py:186} INFO - Started process (PID=493) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:29.149+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:17:29.151+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:29.150+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:29.227+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:29.338+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:29.338+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:17:29.356+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:29.355+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:17:29.371+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.228 seconds
+[2025-04-07T02:17:50.334+0000] {processor.py:186} INFO - Started process (PID=504) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:50.334+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:17:50.336+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:50.336+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:50.416+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:17:50.588+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:50.588+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:17:50.604+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:17:50.604+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:17:50.620+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.291 seconds
+[2025-04-07T02:18:20.776+0000] {processor.py:186} INFO - Started process (PID=515) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:20.777+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:18:20.779+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:20.778+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:20.949+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:20.964+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:20.963+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:18:20.980+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:20.980+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:18:20.993+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.222 seconds
+[2025-04-07T02:18:27.058+0000] {processor.py:186} INFO - Started process (PID=520) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:27.059+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:18:27.061+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:27.061+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:27.238+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:27.322+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:27.322+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:18:27.339+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:27.339+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:18:27.355+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.301 seconds
+[2025-04-07T02:18:57.537+0000] {processor.py:186} INFO - Started process (PID=531) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:57.538+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:18:57.540+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:57.540+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:57.707+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:18:57.722+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:57.722+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:18:57.738+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:18:57.738+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:18:57.921+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.388 seconds
+[2025-04-07T02:19:25.067+0000] {processor.py:186} INFO - Started process (PID=542) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:25.068+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:19:25.069+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:25.069+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:25.242+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:25.258+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:25.258+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:19:25.275+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:25.275+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:19:25.291+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.229 seconds
+[2025-04-07T02:19:55.463+0000] {processor.py:186} INFO - Started process (PID=553) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:55.464+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:19:55.467+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:55.466+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:55.636+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:19:55.651+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:55.650+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:19:55.668+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:19:55.668+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:19:55.681+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.222 seconds
+[2025-04-07T02:20:24.823+0000] {processor.py:186} INFO - Started process (PID=564) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:24.824+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:20:24.826+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:24.826+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:24.904+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:24.923+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:24.922+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:20:25.033+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:25.033+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:20:25.048+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.230 seconds
+[2025-04-07T02:20:55.240+0000] {processor.py:186} INFO - Started process (PID=666) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:55.241+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:20:55.243+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:55.243+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:55.321+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:20:55.428+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:55.428+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:20:55.444+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:20:55.444+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:20:55.458+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.224 seconds
+[2025-04-07T02:21:25.653+0000] {processor.py:186} INFO - Started process (PID=677) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:25.654+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:21:25.656+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:25.655+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:25.819+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:25.834+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:25.834+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:21:25.851+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:25.850+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:21:25.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.219 seconds
+[2025-04-07T02:21:56.020+0000] {processor.py:186} INFO - Started process (PID=688) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:56.020+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:21:56.022+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:56.022+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:56.188+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:21:56.203+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:56.203+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:21:56.220+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:21:56.220+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:21:56.234+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.219 seconds
+[2025-04-07T02:22:26.393+0000] {processor.py:186} INFO - Started process (PID=702) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:26.394+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:22:26.395+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:26.395+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:26.568+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:26.583+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:26.583+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:22:26.601+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:26.601+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:22:26.618+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.229 seconds
+[2025-04-07T02:22:56.820+0000] {processor.py:186} INFO - Started process (PID=787) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:56.821+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:22:56.822+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:56.822+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:56.986+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:22:57.001+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:57.001+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:22:57.019+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:22:57.019+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:22:57.032+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.217 seconds
+[2025-04-07T02:25:05.967+0000] {processor.py:186} INFO - Started process (PID=207) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:05.968+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:25:05.969+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:05.969+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:06.054+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:06.247+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.246+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:spark_airflow
+[2025-04-07T02:25:06.254+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.254+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:spark_airflow
+[2025-04-07T02:25:06.259+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.259+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:spark_airflow
+[2025-04-07T02:25:06.264+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.264+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:spark_airflow
+[2025-04-07T02:25:06.270+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.270+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:spark_airflow
+[2025-04-07T02:25:06.276+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.276+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:spark_airflow
+[2025-04-07T02:25:06.281+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.281+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:spark_airflow
+[2025-04-07T02:25:06.282+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.282+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:25:06.290+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.290+0000] {dag.py:3262} INFO - Creating ORM DAG for spark_airflow
+[2025-04-07T02:25:06.298+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:06.298+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:25:06.311+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.348 seconds
+[2025-04-07T02:25:36.495+0000] {processor.py:186} INFO - Started process (PID=224) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:36.496+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:25:36.498+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:36.498+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:36.572+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:25:36.590+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:36.589+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:25:36.608+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:25:36.608+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:25:36.626+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.136 seconds
+[2025-04-07T02:26:06.683+0000] {processor.py:186} INFO - Started process (PID=235) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:06.683+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:26:06.685+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:06.685+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:06.759+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:06.775+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:06.775+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:26:06.794+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:06.794+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:26:06.904+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.226 seconds
+[2025-04-07T02:26:20.838+0000] {processor.py:186} INFO - Started process (PID=240) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:20.839+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:26:20.841+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:20.840+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:20.920+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:21.106+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:21.106+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:26:21.124+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:21.124+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:26:21.140+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.307 seconds
+[2025-04-07T02:26:51.287+0000] {processor.py:186} INFO - Started process (PID=251) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:51.287+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:26:51.289+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:51.289+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:51.366+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:26:51.384+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:51.383+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:26:51.500+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:26:51.500+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:26:51.513+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.231 seconds
+[2025-04-07T02:27:13.404+0000] {processor.py:186} INFO - Started process (PID=263) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:13.405+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:27:13.407+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:13.407+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:13.486+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:13.504+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:13.504+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:27:13.616+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:13.616+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-03-30 15:00:00+00:00, run_after=2025-04-06 15:00:00+00:00
+[2025-04-07T02:27:13.630+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.230 seconds
+[2025-04-07T02:27:43.790+0000] {processor.py:186} INFO - Started process (PID=634) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:43.790+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:27:43.793+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:43.792+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:43.867+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:27:43.976+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:43.975+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:27:43.993+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:27:43.992+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:27:44.007+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.221 seconds
+[2025-04-07T02:28:14.161+0000] {processor.py:186} INFO - Started process (PID=645) to work on /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:28:14.162+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/spark_airflow.py for tasks to queue
+[2025-04-07T02:28:14.164+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:28:14.164+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:28:14.328+0000] {processor.py:925} INFO - DAG(s) 'spark_airflow' retrieved from /opt/airflow/dags/spark_airflow.py
+[2025-04-07T02:28:14.344+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:28:14.344+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-07T02:28:14.360+0000] {logging_mixin.py:190} INFO - [2025-04-07T02:28:14.360+0000] {dag.py:4180} INFO - Setting next_dagrun for spark_airflow to 2025-04-06 15:00:00+00:00, run_after=2025-04-13 15:00:00+00:00
+[2025-04-07T02:28:14.376+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/spark_airflow.py took 0.219 seconds
