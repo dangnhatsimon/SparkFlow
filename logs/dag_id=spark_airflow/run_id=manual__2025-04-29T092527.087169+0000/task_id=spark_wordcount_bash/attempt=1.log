@@ -1,0 +1,831 @@
+[2025-04-29T09:25:29.451+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-29T09:25:29.464+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:25:27.087169+00:00 [queued]>
+[2025-04-29T09:25:29.470+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:25:27.087169+00:00 [queued]>
+[2025-04-29T09:25:29.471+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-29T09:25:29.482+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): spark_wordcount_bash> on 2025-04-29 09:25:27.087169+00:00
+[2025-04-29T09:25:29.487+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:25:29.488+0000] {standard_task_runner.py:72} INFO - Started process 127 to run task
+[2025-04-29T09:25:29.489+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'spark_***', 'spark_wordcount_bash', 'manual__2025-04-29T09:25:27.087169+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/spark_***.py', '--cfg-path', '/tmp/tmp_es1am4v']
+[2025-04-29T09:25:29.491+0000] {standard_task_runner.py:105} INFO - Job 10: Subtask spark_wordcount_bash
+[2025-04-29T09:25:29.528+0000] {task_command.py:467} INFO - Running <TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:25:27.087169+00:00 [running]> on host e081cd3880a4
+[2025-04-29T09:25:29.590+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_***' AIRFLOW_CTX_TASK_ID='spark_wordcount_bash' AIRFLOW_CTX_EXECUTION_DATE='2025-04-29T09:25:27.087169+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-29T09:25:27.087169+00:00'
+[2025-04-29T09:25:29.595+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/listener.py:477: DeprecationWarning: This process (pid=127) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:25:29.620+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:25:29.633+0000] {adapter.py:169} WARNING - Failed to emit OpenLineage `START` event of id `019680dd-93af-7452-9947-411d21ef62d7` with the following exception: `HTTPConnectionPool(host='host.docker.internal', port=5000): Max retries exceeded with url: /api/v1/lineage (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0507c55940>: Failed to establish a new connection: [Errno 101] Network is unreachable'))`
+[2025-04-29T09:25:29.650+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-29T09:25:29.653+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-29T09:25:29.654+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec sparkflow-spark-master spark-submit --master spark://sparkflow-spark-master:7077 --num-executors 2 --total-executor-cores 4 --executor-cores 2 --executor-memory 4g --driver-memory 4g --name ***-spark --deploy-mode client ./jobs/wordcount.py']
+[2025-04-29T09:25:29.661+0000] {subprocess.py:99} INFO - Output:
+[2025-04-29T09:25:30.829+0000] {subprocess.py:106} INFO - ERROR StatusConsoleListener Unable to locate appender "ConsoleAppender" for logger config "org.apache.spark.SparkContext"
+[2025-04-29T09:25:30.829+0000] {subprocess.py:106} INFO - ERROR StatusConsoleListener Unable to locate appender "ConsoleAppender" for logger config "org.apache.spark.api.python"
+[2025-04-29T09:25:30.830+0000] {subprocess.py:106} INFO - ERROR StatusConsoleListener Unable to locate appender "ConsoleAppender" for logger config "org.apache.spark.sql.execution"
+[2025-04-29T09:25:31.171+0000] {subprocess.py:106} INFO - Warning: Ignoring non-Spark config property: ;
+[2025-04-29T09:25:32.476+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SparkContext: Running Spark version 3.5.5
+[2025-04-29T09:25:32.483+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-04-29T09:25:32.483+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SparkContext: Java version 17.0.14
+[2025-04-29T09:25:32.562+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-04-29T09:25:32.649+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceUtils: ==============================================================
+[2025-04-29T09:25:32.650+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-04-29T09:25:32.650+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceUtils: ==============================================================
+[2025-04-29T09:25:32.651+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SparkContext: Submitted application: PythonWordCount
+[2025-04-29T09:25:32.675+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-04-29T09:25:32.684+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+[2025-04-29T09:25:32.685+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-04-29T09:25:32.737+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SecurityManager: Changing view acls to: root
+[2025-04-29T09:25:32.738+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SecurityManager: Changing modify acls to: root
+[2025-04-29T09:25:32.738+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SecurityManager: Changing view acls groups to:
+[2025-04-29T09:25:32.739+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SecurityManager: Changing modify acls groups to:
+[2025-04-29T09:25:32.739+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2025-04-29T09:25:32.816+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG InternalLoggerFactory: Using SLF4J as the default logging framework
+[2025-04-29T09:25:32.822+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG InternalThreadLocalMap: -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2025-04-29T09:25:32.823+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG InternalThreadLocalMap: -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2025-04-29T09:25:32.838+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG MultithreadEventLoopGroup: -Dio.netty.eventLoopThreads: 32
+[2025-04-29T09:25:32.848+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG GlobalEventExecutor: -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+[2025-04-29T09:25:32.878+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: -Dio.netty.noUnsafe: false
+[2025-04-29T09:25:32.879+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: Java version: 17
+[2025-04-29T09:25:32.880+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: sun.misc.Unsafe.theUnsafe: available
+[2025-04-29T09:25:32.881+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: sun.misc.Unsafe.copyMemory: available
+[2025-04-29T09:25:32.881+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: sun.misc.Unsafe.storeFence: available
+[2025-04-29T09:25:32.882+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: java.nio.Buffer.address: available
+[2025-04-29T09:25:32.884+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: direct buffer constructor: unavailable
+[2025-04-29T09:25:32.884+0000] {subprocess.py:106} INFO - java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+[2025-04-29T09:25:32.885+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
+[2025-04-29T09:25:32.885+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent0$5.run(PlatformDependent0.java:289)
+[2025-04-29T09:25:32.885+0000] {subprocess.py:106} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+[2025-04-29T09:25:32.886+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:282)
+[2025-04-29T09:25:32.886+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:333)
+[2025-04-29T09:25:32.887+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:88)
+[2025-04-29T09:25:32.887+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:84)
+[2025-04-29T09:25:32.887+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:182)
+[2025-04-29T09:25:32.888+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:38)
+[2025-04-29T09:25:32.888+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+[2025-04-29T09:25:32.889+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:60)
+[2025-04-29T09:25:32.889+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:49)
+[2025-04-29T09:25:32.890+0000] {subprocess.py:106} INFO - 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+[2025-04-29T09:25:32.890+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:87)
+[2025-04-29T09:25:32.890+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:82)
+[2025-04-29T09:25:32.891+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:69)
+[2025-04-29T09:25:32.891+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.util.NettyUtils.createEventLoop(NettyUtils.java:70)
+[2025-04-29T09:25:32.891+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.client.TransportClientFactory.<init>(TransportClientFactory.java:106)
+[2025-04-29T09:25:32.892+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.TransportContext.createClientFactory(TransportContext.java:144)
+[2025-04-29T09:25:32.892+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.<init>(NettyRpcEnv.scala:77)
+[2025-04-29T09:25:32.893+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnvFactory.create(NettyRpcEnv.scala:492)
+[2025-04-29T09:25:32.893+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.RpcEnv$.create(RpcEnv.scala:58)
+[2025-04-29T09:25:32.893+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:271)
+[2025-04-29T09:25:32.894+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)
+[2025-04-29T09:25:32.894+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:284)
+[2025-04-29T09:25:32.895+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:478)
+[2025-04-29T09:25:32.895+0000] {subprocess.py:106} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-04-29T09:25:32.895+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-04-29T09:25:32.896+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-04-29T09:25:32.896+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-04-29T09:25:32.897+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-04-29T09:25:32.897+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-04-29T09:25:32.897+0000] {subprocess.py:106} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-04-29T09:25:32.898+0000] {subprocess.py:106} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-04-29T09:25:32.898+0000] {subprocess.py:106} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-04-29T09:25:32.898+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-04-29T09:25:32.899+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-04-29T09:25:32.899+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-04-29T09:25:32.899+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-04-29T09:25:32.900+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:25:32.900+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: java.nio.Bits.unaligned: available, true
+[2025-04-29T09:25:32.900+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+[2025-04-29T09:25:32.901+0000] {subprocess.py:106} INFO - java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @327514f
+[2025-04-29T09:25:32.901+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392)
+[2025-04-29T09:25:32.901+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:674)
+[2025-04-29T09:25:32.902+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:561)
+[2025-04-29T09:25:32.902+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent0$7.run(PlatformDependent0.java:411)
+[2025-04-29T09:25:32.902+0000] {subprocess.py:106} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+[2025-04-29T09:25:32.903+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:402)
+[2025-04-29T09:25:32.903+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:333)
+[2025-04-29T09:25:32.903+0000] {subprocess.py:106} INFO - 	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:88)
+[2025-04-29T09:25:32.904+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:84)
+[2025-04-29T09:25:32.904+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:182)
+[2025-04-29T09:25:32.904+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:38)
+[2025-04-29T09:25:32.905+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+[2025-04-29T09:25:32.905+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:60)
+[2025-04-29T09:25:32.906+0000] {subprocess.py:106} INFO - 	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:49)
+[2025-04-29T09:25:32.906+0000] {subprocess.py:106} INFO - 	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+[2025-04-29T09:25:32.906+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:87)
+[2025-04-29T09:25:32.907+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:82)
+[2025-04-29T09:25:32.907+0000] {subprocess.py:106} INFO - 	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:69)
+[2025-04-29T09:25:32.908+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.util.NettyUtils.createEventLoop(NettyUtils.java:70)
+[2025-04-29T09:25:32.908+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.client.TransportClientFactory.<init>(TransportClientFactory.java:106)
+[2025-04-29T09:25:32.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.network.TransportContext.createClientFactory(TransportContext.java:144)
+[2025-04-29T09:25:32.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnv.<init>(NettyRpcEnv.scala:77)
+[2025-04-29T09:25:32.909+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.netty.NettyRpcEnvFactory.create(NettyRpcEnv.scala:492)
+[2025-04-29T09:25:32.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.rpc.RpcEnv$.create(RpcEnv.scala:58)
+[2025-04-29T09:25:32.910+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:271)
+[2025-04-29T09:25:32.911+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)
+[2025-04-29T09:25:32.911+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:284)
+[2025-04-29T09:25:32.911+0000] {subprocess.py:106} INFO - 	at org.apache.spark.SparkContext.<init>(SparkContext.scala:478)
+[2025-04-29T09:25:32.912+0000] {subprocess.py:106} INFO - 	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-04-29T09:25:32.912+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-04-29T09:25:32.912+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-04-29T09:25:32.913+0000] {subprocess.py:106} INFO - 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-04-29T09:25:32.913+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-04-29T09:25:32.913+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-04-29T09:25:32.914+0000] {subprocess.py:106} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-04-29T09:25:32.914+0000] {subprocess.py:106} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-04-29T09:25:32.914+0000] {subprocess.py:106} INFO - 	at py4j.Gateway.invoke(Gateway.java:238)
+[2025-04-29T09:25:32.915+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-04-29T09:25:32.915+0000] {subprocess.py:106} INFO - 	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-04-29T09:25:32.916+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-04-29T09:25:32.916+0000] {subprocess.py:106} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-04-29T09:25:32.916+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:25:32.917+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent0: java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+[2025-04-29T09:25:32.917+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: sun.misc.Unsafe: available
+[2025-04-29T09:25:32.917+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: maxDirectMemory: 4294967296 bytes (maybe)
+[2025-04-29T09:25:32.918+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+[2025-04-29T09:25:32.918+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2025-04-29T09:25:32.918+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: -Dio.netty.maxDirectMemory: -1 bytes
+[2025-04-29T09:25:32.919+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2025-04-29T09:25:32.919+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG CleanerJava9: java.nio.ByteBuffer.cleaner(): available
+[2025-04-29T09:25:32.919+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: -Dio.netty.noPreferDirect: false
+[2025-04-29T09:25:32.920+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NioEventLoop: -Dio.netty.noKeySetOptimization: false
+[2025-04-29T09:25:32.920+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NioEventLoop: -Dio.netty.selectorAutoRebuildThreshold: 512
+[2025-04-29T09:25:32.920+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PlatformDependent: org.jctools-core.MpscChunkedArrayQueue: available
+[2025-04-29T09:25:32.921+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@63d631c7
+[2025-04-29T09:25:32.921+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@5e5495c4
+[2025-04-29T09:25:32.921+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@71aa28d0
+[2025-04-29T09:25:32.922+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@34f47a55
+[2025-04-29T09:25:32.922+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@71488f34
+[2025-04-29T09:25:32.923+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@b48de6c
+[2025-04-29T09:25:32.923+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2b049b7d
+[2025-04-29T09:25:32.923+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3c357a9a
+[2025-04-29T09:25:32.924+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG ResourceLeakDetector: -Dio.netty.leakDetection.level: simple
+[2025-04-29T09:25:32.924+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG ResourceLeakDetector: -Dio.netty.leakDetection.targetRecords: 4
+[2025-04-29T09:25:32.925+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numHeapArenas: 32
+[2025-04-29T09:25:32.925+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numDirectArenas: 32
+[2025-04-29T09:25:32.926+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.pageSize: 8192
+[2025-04-29T09:25:32.926+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxOrder: 9
+[2025-04-29T09:25:32.926+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.chunkSize: 4194304
+[2025-04-29T09:25:32.927+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.smallCacheSize: 256
+[2025-04-29T09:25:32.927+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.normalCacheSize: 64
+[2025-04-29T09:25:32.927+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2025-04-29T09:25:32.928+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.cacheTrimInterval: 8192
+[2025-04-29T09:25:32.928+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[2025-04-29T09:25:32.928+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.useCacheForAllThreads: false
+[2025-04-29T09:25:32.929+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2025-04-29T09:25:32.943+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@22108545
+[2025-04-29T09:25:32.943+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6f79f5bd
+[2025-04-29T09:25:32.944+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1e511e81
+[2025-04-29T09:25:32.944+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@384d9aa3
+[2025-04-29T09:25:32.945+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@633addb1
+[2025-04-29T09:25:32.945+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@434e0876
+[2025-04-29T09:25:32.945+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@55fdb388
+[2025-04-29T09:25:32.946+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1b1a316
+[2025-04-29T09:25:32.946+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@345331c4
+[2025-04-29T09:25:32.961+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG DefaultChannelId: -Dio.netty.processId: 422 (auto-detected)
+[2025-04-29T09:25:32.963+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NetUtil: -Djava.net.preferIPv4Stack: false
+[2025-04-29T09:25:32.963+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NetUtil: -Djava.net.preferIPv6Addresses: false
+[2025-04-29T09:25:32.965+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NetUtilInitializations: Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+[2025-04-29T09:25:32.966+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG NetUtil: /proc/sys/net/core/somaxconn: 4096
+[2025-04-29T09:25:32.967+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG DefaultChannelId: -Dio.netty.machineId: 52:7e:dc:ff:fe:c3:b7:3a (auto-detected)
+[2025-04-29T09:25:32.988+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG ByteBufUtil: -Dio.netty.allocator.type: pooled
+[2025-04-29T09:25:32.989+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG ByteBufUtil: -Dio.netty.threadLocalDirectBufferSize: 0
+[2025-04-29T09:25:32.990+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG ByteBufUtil: -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2025-04-29T09:25:32.998+0000] {subprocess.py:106} INFO - 25/04/29 09:25:32 DEBUG TransportServer: Shuffle server started on 172.21.0.4 with port 43103
+[2025-04-29T09:25:33.009+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Utils: Successfully started service 'sparkDriver' on port 43103.
+[2025-04-29T09:25:33.010+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG SparkEnv: Using serializer: class org.apache.spark.serializer.JavaSerializer
+[2025-04-29T09:25:33.041+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO SparkEnv: Registering MapOutputTracker
+[2025-04-29T09:25:33.042+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG MapOutputTrackerMasterEndpoint: init
+[2025-04-29T09:25:33.085+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO SparkEnv: Registering BlockManagerMaster
+[2025-04-29T09:25:33.106+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-04-29T09:25:33.106+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-04-29T09:25:33.110+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-04-29T09:25:33.136+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-860651b6-9c4a-43c2-9504-e9b76b4d068b
+[2025-04-29T09:25:33.138+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG DiskBlockManager: Adding shutdown hook
+[2025-04-29T09:25:33.159+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+[2025-04-29T09:25:33.179+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-04-29T09:25:33.179+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: init
+[2025-04-29T09:25:33.191+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG SecurityManager: Created SSL options for ui: SSLOptions{enabled=false, port=None, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+[2025-04-29T09:25:33.304+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-04-29T09:25:33.336+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG JettyUtils: Using requestHeaderSize: 8192
+[2025-04-29T09:25:33.336+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG JettyUtils: Using setSendServerVersion: false
+[2025-04-29T09:25:33.337+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG JettyUtils: Using setSendXPoweredBy: false
+[2025-04-29T09:25:33.363+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-04-29T09:25:33.410+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE HeartbeatReceiver: Checking for hosts with no recent heartbeats in HeartbeatReceiver.
+[2025-04-29T09:25:33.465+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Executor: Starting executor ID driver on host e1c8d19e1fe1
+[2025-04-29T09:25:33.465+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Executor: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-04-29T09:25:33.466+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Executor: Java version 17.0.14
+[2025-04-29T09:25:33.473+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-04-29T09:25:33.473+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@3981432 for default.
+[2025-04-29T09:25:33.492+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2dc5e98d
+[2025-04-29T09:25:33.493+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@63aa4dbf
+[2025-04-29T09:25:33.493+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@523d1535
+[2025-04-29T09:25:33.494+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@d87ada1
+[2025-04-29T09:25:33.494+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@f8ca41d
+[2025-04-29T09:25:33.495+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3efac7e6
+[2025-04-29T09:25:33.495+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4d4e9b1
+[2025-04-29T09:25:33.496+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@340eb62f
+[2025-04-29T09:25:33.496+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@75951a52
+[2025-04-29T09:25:33.496+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6110d9c3
+[2025-04-29T09:25:33.497+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4e239cef
+[2025-04-29T09:25:33.497+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@133948f3
+[2025-04-29T09:25:33.497+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@224b0f0a
+[2025-04-29T09:25:33.498+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@45721441
+[2025-04-29T09:25:33.498+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@17642ce4
+[2025-04-29T09:25:33.498+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4e43802b
+[2025-04-29T09:25:33.499+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@340ae5b6
+[2025-04-29T09:25:33.499+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG TransportServer: Shuffle server started on 172.21.0.4 with port 45985
+[2025-04-29T09:25:33.499+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45985.
+[2025-04-29T09:25:33.500+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO NettyBlockTransferService: Server created on e1c8d19e1fe1:45985
+[2025-04-29T09:25:33.500+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-04-29T09:25:33.508+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:33.511+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG DefaultTopologyMapper: Got a request for e1c8d19e1fe1
+[2025-04-29T09:25:33.512+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManagerMasterEndpoint: Registering block manager e1c8d19e1fe1:45985 with 2.2 GiB RAM, BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:33.514+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:33.515+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:33.686+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Starting: Acquiring creator semaphore for file:/opt/spark/spark-events/
+[2025-04-29T09:25:33.687+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Acquiring creator semaphore for file:/opt/spark/spark-events/: duration 0:00.000s
+[2025-04-29T09:25:33.689+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Starting: Creating FS file:/opt/spark/spark-events/
+[2025-04-29T09:25:33.689+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Loading filesystems
+[2025-04-29T09:25:33.711+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: file:// = class org.apache.hadoop.fs.LocalFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.716+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: viewfs:// = class org.apache.hadoop.fs.viewfs.ViewFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.718+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: har:// = class org.apache.hadoop.fs.HarFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.720+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: http:// = class org.apache.hadoop.fs.http.HttpFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.721+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: https:// = class org.apache.hadoop.fs.http.HttpsFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.730+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: hdfs:// = class org.apache.hadoop.hdfs.DistributedFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.739+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: webhdfs:// = class org.apache.hadoop.hdfs.web.WebHdfsFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.740+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: swebhdfs:// = class org.apache.hadoop.hdfs.web.SWebHdfsFileSystem from /opt/spark/jars/hadoop-client-api-3.3.4.jar
+[2025-04-29T09:25:33.742+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: nullscan:// = class org.apache.hadoop.hive.ql.io.NullScanFileSystem from /opt/spark/jars/hive-exec-2.3.9-core.jar
+[2025-04-29T09:25:33.743+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: file:// = class org.apache.hadoop.hive.ql.io.ProxyLocalFileSystem from /opt/spark/jars/hive-exec-2.3.9-core.jar
+[2025-04-29T09:25:33.744+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Looking for FS supporting file
+[2025-04-29T09:25:33.744+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: looking for configuration option fs.file.impl
+[2025-04-29T09:25:33.753+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Looking in service filesystems for implementation class
+[2025-04-29T09:25:33.754+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: FS for file is class org.apache.hadoop.hive.ql.io.ProxyLocalFileSystem
+[2025-04-29T09:25:33.757+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 DEBUG FileSystem: Creating FS file:/opt/spark/spark-events/: duration 0:00.068s
+[2025-04-29T09:25:33.778+0000] {subprocess.py:106} INFO - 25/04/29 09:25:33 INFO SingleEventLogFileWriter: Logging events to file:/opt/spark/spark-events/local-1745918733421.inprogress
+[2025-04-29T09:25:34.196+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$valueOfPair$1
+[2025-04-29T09:25:34.211+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$valueOfPair$1) is now cleaned +++
+[2025-04-29T09:25:34.229+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$collect$2
+[2025-04-29T09:25:34.237+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$collect$2) is now cleaned +++
+[2025-04-29T09:25:34.278+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$runJob$5
+[2025-04-29T09:25:34.282+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$runJob$5) is now cleaned +++
+[2025-04-29T09:25:34.284+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO SparkContext: Starting job: collect at /opt/spark/jobs/wordcount.py:24
+[2025-04-29T09:25:34.300+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: eagerlyComputePartitionsForRddAndAncestors for RDD 5 took 0.014586 seconds
+[2025-04-29T09:25:34.304+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+[2025-04-29T09:25:34.305+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+[2025-04-29T09:25:34.312+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /opt/spark/jobs/wordcount.py:22) as input to shuffle 0
+[2025-04-29T09:25:34.317+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Got job 0 (collect at /opt/spark/jobs/wordcount.py:24) with 16 output partitions
+[2025-04-29T09:25:34.318+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Final stage: ResultStage 1 (collect at /opt/spark/jobs/wordcount.py:24)
+[2025-04-29T09:25:34.318+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+[2025-04-29T09:25:34.324+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+[2025-04-29T09:25:34.325+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=collect at /opt/spark/jobs/wordcount.py:24;jobs=0))
+[2025-04-29T09:25:34.326+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: missing: List(ShuffleMapStage 0)
+[2025-04-29T09:25:34.326+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: submitStage(ShuffleMapStage 0 (name=reduceByKey at /opt/spark/jobs/wordcount.py:22;jobs=0))
+[2025-04-29T09:25:34.327+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: missing: List()
+[2025-04-29T09:25:34.328+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /opt/spark/jobs/wordcount.py:22), which has no missing parents
+[2025-04-29T09:25:34.328+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG DAGScheduler: submitMissingTasks(ShuffleMapStage 0)
+[2025-04-29T09:25:34.370+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0
+[2025-04-29T09:25:34.371+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+[2025-04-29T09:25:34.373+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+[2025-04-29T09:25:34.400+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 10.9 KiB, free 2.2 GiB)
+[2025-04-29T09:25:34.401+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Put block broadcast_0 locally took 27 ms
+[2025-04-29T09:25:34.402+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0
+[2025-04-29T09:25:34.403+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Putting block broadcast_0 without replication took 29 ms
+[2025-04-29T09:25:34.433+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0_piece0
+[2025-04-29T09:25:34.434+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+[2025-04-29T09:25:34.434+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+[2025-04-29T09:25:34.435+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.9 KiB, free 2.2 GiB)
+[2025-04-29T09:25:34.436+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:34.438+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on e1c8d19e1fe1:45985 (size: 6.9 KiB, free: 2.2 GiB)
+[2025-04-29T09:25:34.441+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+[2025-04-29T09:25:34.442+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Told master about block broadcast_0_piece0
+[2025-04-29T09:25:34.442+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Put block broadcast_0_piece0 locally took 8 ms
+[2025-04-29T09:25:34.443+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0_piece0
+[2025-04-29T09:25:34.443+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took 8 ms
+[2025-04-29T09:25:34.443+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2025-04-29T09:25:34.456+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /opt/spark/jobs/wordcount.py:22) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2025-04-29T09:25:34.457+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSchedulerImpl: Adding task set 0.0 with 16 tasks resource profile 0
+[2025-04-29T09:25:34.466+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+[2025-04-29T09:25:34.469+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG TaskSetManager: Adding pending tasks took 2 ms
+[2025-04-29T09:25:34.470+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+[2025-04-29T09:25:34.480+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 0
+[2025-04-29T09:25:34.481+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+[2025-04-29T09:25:34.495+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (e1c8d19e1fe1, executor driver, partition 0, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.498+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (e1c8d19e1fe1, executor driver, partition 1, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.499+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (e1c8d19e1fe1, executor driver, partition 2, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.500+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (e1c8d19e1fe1, executor driver, partition 3, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.500+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (e1c8d19e1fe1, executor driver, partition 4, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.501+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (e1c8d19e1fe1, executor driver, partition 5, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.502+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (e1c8d19e1fe1, executor driver, partition 6, PROCESS_LOCAL, 9002 bytes)
+[2025-04-29T09:25:34.503+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (e1c8d19e1fe1, executor driver, partition 7, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.503+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (e1c8d19e1fe1, executor driver, partition 8, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.504+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (e1c8d19e1fe1, executor driver, partition 9, PROCESS_LOCAL, 9003 bytes)
+[2025-04-29T09:25:34.504+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (e1c8d19e1fe1, executor driver, partition 10, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.505+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (e1c8d19e1fe1, executor driver, partition 11, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.506+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (e1c8d19e1fe1, executor driver, partition 12, PROCESS_LOCAL, 9002 bytes)
+[2025-04-29T09:25:34.506+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (e1c8d19e1fe1, executor driver, partition 13, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:25:34.507+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (e1c8d19e1fe1, executor driver, partition 14, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:25:34.508+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (e1c8d19e1fe1, executor driver, partition 15, PROCESS_LOCAL, 9000 bytes)
+[2025-04-29T09:25:34.520+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 12.0 in stage 0.0 (TID 12)
+[2025-04-29T09:25:34.520+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+[2025-04-29T09:25:34.521+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 13.0 in stage 0.0 (TID 13)
+[2025-04-29T09:25:34.522+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+[2025-04-29T09:25:34.522+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+[2025-04-29T09:25:34.523+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+[2025-04-29T09:25:34.523+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+[2025-04-29T09:25:34.523+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 15.0 in stage 0.0 (TID 15)
+[2025-04-29T09:25:34.524+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2025-04-29T09:25:34.524+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+[2025-04-29T09:25:34.525+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+[2025-04-29T09:25:34.525+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+[2025-04-29T09:25:34.525+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+[2025-04-29T09:25:34.526+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+[2025-04-29T09:25:34.526+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 14.0 in stage 0.0 (TID 14)
+[2025-04-29T09:25:34.526+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+[2025-04-29T09:25:34.535+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 11
+[2025-04-29T09:25:34.536+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 15
+[2025-04-29T09:25:34.536+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 13
+[2025-04-29T09:25:34.537+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+[2025-04-29T09:25:34.537+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 4
+[2025-04-29T09:25:34.538+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 8
+[2025-04-29T09:25:34.538+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 6
+[2025-04-29T09:25:34.539+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+[2025-04-29T09:25:34.539+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 3
+[2025-04-29T09:25:34.541+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 9
+[2025-04-29T09:25:34.541+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 7
+[2025-04-29T09:25:34.542+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 14
+[2025-04-29T09:25:34.542+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 5
+[2025-04-29T09:25:34.542+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 10
+[2025-04-29T09:25:34.543+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 16
+[2025-04-29T09:25:34.543+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 12
+[2025-04-29T09:25:34.568+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Getting local block broadcast_0
+[2025-04-29T09:25:34.569+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task 5 trying to acquire read lock for broadcast_0
+[2025-04-29T09:25:34.574+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 TRACE BlockInfoManager: Task 5 acquired read lock for broadcast_0
+[2025-04-29T09:25:34.575+0000] {subprocess.py:106} INFO - 25/04/29 09:25:34 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+[2025-04-29T09:25:35.403+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 781, boot = 571, init = 210, finish = 0
+[2025-04-29T09:25:35.411+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 566, init = 215, finish = 1
+[2025-04-29T09:25:35.411+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 783, boot = 545, init = 236, finish = 2
+[2025-04-29T09:25:35.412+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 793, boot = 564, init = 228, finish = 1
+[2025-04-29T09:25:35.413+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 535, init = 246, finish = 1
+[2025-04-29T09:25:35.413+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 8 with length 16
+[2025-04-29T09:25:35.414+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 0 with length 16
+[2025-04-29T09:25:35.414+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 2 with length 16
+[2025-04-29T09:25:35.415+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 5 with length 16
+[2025-04-29T09:25:35.415+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 13 with length 16
+[2025-04-29T09:25:35.417+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 8: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.418+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 13: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.420+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 0: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.421+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 5: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.422+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 2: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.424+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task 5 releasing lock for broadcast_0
+[2025-04-29T09:25:35.430+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 825, boot = 569, init = 256, finish = 0
+[2025-04-29T09:25:35.431+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 10 with length 16
+[2025-04-29T09:25:35.431+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 10: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.446+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.447+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.447+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.448+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.448+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 13.0 in stage 0.0 (TID 13). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.449+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1423 bytes result sent to driver
+[2025-04-29T09:25:35.450+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 15
+[2025-04-29T09:25:35.450+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 14
+[2025-04-29T09:25:35.451+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 13
+[2025-04-29T09:25:35.451+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 12
+[2025-04-29T09:25:35.452+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 11
+[2025-04-29T09:25:35.452+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 10
+[2025-04-29T09:25:35.452+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 15
+[2025-04-29T09:25:35.453+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+[2025-04-29T09:25:35.457+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 950 ms on e1c8d19e1fe1 (executor driver) (1/16)
+[2025-04-29T09:25:35.458+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 957 ms on e1c8d19e1fe1 (executor driver) (2/16)
+[2025-04-29T09:25:35.459+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 974 ms on e1c8d19e1fe1 (executor driver) (3/16)
+[2025-04-29T09:25:35.459+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 961 ms on e1c8d19e1fe1 (executor driver) (4/16)
+[2025-04-29T09:25:35.460+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 955 ms on e1c8d19e1fe1 (executor driver) (5/16)
+[2025-04-29T09:25:35.460+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 957 ms on e1c8d19e1fe1 (executor driver) (6/16)
+[2025-04-29T09:25:35.462+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 60951
+[2025-04-29T09:25:35.465+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.467+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.468+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.470+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.471+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.472+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.752+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 542, init = 239, finish = 1
+[2025-04-29T09:25:35.752+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 540, init = 241, finish = 1
+[2025-04-29T09:25:35.753+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 556, init = 225, finish = 1
+[2025-04-29T09:25:35.753+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 538, init = 243, finish = 1
+[2025-04-29T09:25:35.754+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 561, init = 220, finish = 1
+[2025-04-29T09:25:35.754+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 813, boot = 553, init = 228, finish = 32
+[2025-04-29T09:25:35.754+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 558, init = 223, finish = 1
+[2025-04-29T09:25:35.755+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 783, boot = 550, init = 231, finish = 2
+[2025-04-29T09:25:35.755+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 835, boot = 574, init = 261, finish = 0
+[2025-04-29T09:25:35.756+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO PythonRunner: Times: total = 782, boot = 548, init = 233, finish = 1
+[2025-04-29T09:25:35.763+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 3 with length 16
+[2025-04-29T09:25:35.764+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 12 with length 16
+[2025-04-29T09:25:35.764+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 9 with length 16
+[2025-04-29T09:25:35.765+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 1 with length 16
+[2025-04-29T09:25:35.765+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 11 with length 16
+[2025-04-29T09:25:35.766+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 15 with length 16
+[2025-04-29T09:25:35.766+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 6 with length 16
+[2025-04-29T09:25:35.767+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 4 with length 16
+[2025-04-29T09:25:35.768+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 14 with length 16
+[2025-04-29T09:25:35.768+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 7 with length 16
+[2025-04-29T09:25:35.769+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 9: [0,0,79,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.770+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 15: [0,0,0,0,0,0,0,0,0,0,0,0,76,0,0,0]
+[2025-04-29T09:25:35.770+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 4: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.771+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 6: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,0]
+[2025-04-29T09:25:35.771+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 3: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77]
+[2025-04-29T09:25:35.772+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 7: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.772+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 1: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.772+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.773+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 15.0 in stage 0.0 (TID 15). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.773+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 14: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.774+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.774+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 9
+[2025-04-29T09:25:35.775+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 8
+[2025-04-29T09:25:35.775+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 12: [0,0,78,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.776+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.776+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 7
+[2025-04-29T09:25:35.777+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 6
+[2025-04-29T09:25:35.777+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.778+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 11: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:25:35.778+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 5
+[2025-04-29T09:25:35.779+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.779+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 4
+[2025-04-29T09:25:35.780+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.780+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 3
+[2025-04-29T09:25:35.781+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 14.0 in stage 0.0 (TID 14). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.781+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 12.0 in stage 0.0 (TID 12). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.781+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+[2025-04-29T09:25:35.782+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+[2025-04-29T09:25:35.783+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 1552 bytes result sent to driver
+[2025-04-29T09:25:35.783+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 0
+[2025-04-29T09:25:35.784+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 1270 ms on e1c8d19e1fe1 (executor driver) (7/16)
+[2025-04-29T09:25:35.784+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 1272 ms on e1c8d19e1fe1 (executor driver) (8/16)
+[2025-04-29T09:25:35.784+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 1265 ms on e1c8d19e1fe1 (executor driver) (9/16)
+[2025-04-29T09:25:35.785+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 1269 ms on e1c8d19e1fe1 (executor driver) (10/16)
+[2025-04-29T09:25:35.785+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 1274 ms on e1c8d19e1fe1 (executor driver) (11/16)
+[2025-04-29T09:25:35.786+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.786+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1276 ms on e1c8d19e1fe1 (executor driver) (12/16)
+[2025-04-29T09:25:35.786+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 1267 ms on e1c8d19e1fe1 (executor driver) (13/16)
+[2025-04-29T09:25:35.787+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 1272 ms on e1c8d19e1fe1 (executor driver) (14/16)
+[2025-04-29T09:25:35.787+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 1268 ms on e1c8d19e1fe1 (executor driver) (15/16)
+[2025-04-29T09:25:35.787+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.788+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 1270 ms on e1c8d19e1fe1 (executor driver) (16/16)
+[2025-04-29T09:25:35.788+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.789+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-04-29T09:25:35.789+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.789+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.790+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.790+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.790+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.790+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.791+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:25:35.791+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /opt/spark/jobs/wordcount.py:22) finished in 1.440 s
+[2025-04-29T09:25:35.791+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: looking for newly runnable stages
+[2025-04-29T09:25:35.792+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: running: Set()
+[2025-04-29T09:25:35.792+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: waiting: Set(ResultStage 1)
+[2025-04-29T09:25:35.792+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: failed: Set()
+[2025-04-29T09:25:35.793+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Increasing epoch to 1
+[2025-04-29T09:25:35.793+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE DAGScheduler: Checking if any dependencies of ShuffleMapStage 0 are now runnable
+[2025-04-29T09:25:35.793+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE DAGScheduler: running: Set()
+[2025-04-29T09:25:35.794+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE DAGScheduler: waiting: Set(ResultStage 1)
+[2025-04-29T09:25:35.794+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE DAGScheduler: failed: Set()
+[2025-04-29T09:25:35.794+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=collect at /opt/spark/jobs/wordcount.py:24;jobs=0))
+[2025-04-29T09:25:35.795+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: missing: List()
+[2025-04-29T09:25:35.795+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /opt/spark/jobs/wordcount.py:24), which has no missing parents
+[2025-04-29T09:25:35.796+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG DAGScheduler: submitMissingTasks(ResultStage 1)
+[2025-04-29T09:25:35.798+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1
+[2025-04-29T09:25:35.798+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1
+[2025-04-29T09:25:35.799+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1
+[2025-04-29T09:25:35.799+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 10.0 KiB, free 2.2 GiB)
+[2025-04-29T09:25:35.800+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Put block broadcast_1 locally took 1 ms
+[2025-04-29T09:25:35.800+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1
+[2025-04-29T09:25:35.800+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Putting block broadcast_1 without replication took 1 ms
+[2025-04-29T09:25:35.801+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1_piece0
+[2025-04-29T09:25:35.801+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1_piece0
+[2025-04-29T09:25:35.802+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1_piece0
+[2025-04-29T09:25:35.802+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.0 KiB, free 2.2 GiB)
+[2025-04-29T09:25:35.803+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_1_piece0 for BlockManagerId(driver, e1c8d19e1fe1, 45985, None)
+[2025-04-29T09:25:35.803+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on e1c8d19e1fe1:45985 (size: 6.0 KiB, free: 2.2 GiB)
+[2025-04-29T09:25:35.803+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManagerMaster: Updated info of block broadcast_1_piece0
+[2025-04-29T09:25:35.804+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Told master about block broadcast_1_piece0
+[2025-04-29T09:25:35.804+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Put block broadcast_1_piece0 locally took 1 ms
+[2025-04-29T09:25:35.804+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1_piece0
+[2025-04-29T09:25:35.805+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Putting block broadcast_1_piece0 without replication took 2 ms
+[2025-04-29T09:25:35.805+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2025-04-29T09:25:35.806+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /opt/spark/jobs/wordcount.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2025-04-29T09:25:35.806+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSchedulerImpl: Adding task set 1.0 with 16 tasks resource profile 0
+[2025-04-29T09:25:35.806+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: Epoch for TaskSet 1.0: 1
+[2025-04-29T09:25:35.807+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: Adding pending tasks took 1 ms
+[2025-04-29T09:25:35.808+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: Valid locality levels for TaskSet 1.0: NODE_LOCAL, NO_PREF, ANY
+[2025-04-29T09:25:35.809+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 0
+[2025-04-29T09:25:35.811+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 16) (e1c8d19e1fe1, executor driver, partition 2, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.812+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 17) (e1c8d19e1fe1, executor driver, partition 5, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.812+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 18) (e1c8d19e1fe1, executor driver, partition 12, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.813+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 19) (e1c8d19e1fe1, executor driver, partition 14, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.813+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 20) (e1c8d19e1fe1, executor driver, partition 15, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.814+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: No tasks for locality level NODE_LOCAL, so moving to locality level NO_PREF
+[2025-04-29T09:25:35.814+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG TaskSetManager: Moving to ANY after waiting for 0ms
+[2025-04-29T09:25:35.815+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 21) (e1c8d19e1fe1, executor driver, partition 0, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.815+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 22) (e1c8d19e1fe1, executor driver, partition 1, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.816+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 23) (e1c8d19e1fe1, executor driver, partition 3, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.816+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 24) (e1c8d19e1fe1, executor driver, partition 4, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.817+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 25) (e1c8d19e1fe1, executor driver, partition 6, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.817+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 26) (e1c8d19e1fe1, executor driver, partition 7, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.818+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 27) (e1c8d19e1fe1, executor driver, partition 8, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.818+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 28) (e1c8d19e1fe1, executor driver, partition 9, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.819+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 29) (e1c8d19e1fe1, executor driver, partition 10, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.819+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 30) (e1c8d19e1fe1, executor driver, partition 11, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.820+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 31) (e1c8d19e1fe1, executor driver, partition 13, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:25:35.822+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 14.0 in stage 1.0 (TID 19)
+[2025-04-29T09:25:35.822+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 0.0 in stage 1.0 (TID 21)
+[2025-04-29T09:25:35.823+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 1.0 in stage 1.0 (TID 22)
+[2025-04-29T09:25:35.824+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 15.0 in stage 1.0 (TID 20)
+[2025-04-29T09:25:35.824+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 2.0 in stage 1.0 (TID 16)
+[2025-04-29T09:25:35.825+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 5.0 in stage 1.0 (TID 17)
+[2025-04-29T09:25:35.825+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 12.0 in stage 1.0 (TID 18)
+[2025-04-29T09:25:35.826+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 7.0 in stage 1.0 (TID 26)
+[2025-04-29T09:25:35.831+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 9.0 in stage 1.0 (TID 28)
+[2025-04-29T09:25:35.835+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 8.0 in stage 1.0 (TID 27)
+[2025-04-29T09:25:35.836+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 3.0 in stage 1.0 (TID 23)
+[2025-04-29T09:25:35.836+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 6.0 in stage 1.0 (TID 25)
+[2025-04-29T09:25:35.836+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 10.0 in stage 1.0 (TID 29)
+[2025-04-29T09:25:35.837+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+[2025-04-29T09:25:35.837+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 4
+[2025-04-29T09:25:35.837+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 7
+[2025-04-29T09:25:35.838+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 6
+[2025-04-29T09:25:35.838+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 8
+[2025-04-29T09:25:35.839+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 9
+[2025-04-29T09:25:35.839+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 5
+[2025-04-29T09:25:35.839+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 3
+[2025-04-29T09:25:35.840+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+[2025-04-29T09:25:35.840+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 4.0 in stage 1.0 (TID 24)
+[2025-04-29T09:25:35.841+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 10
+[2025-04-29T09:25:35.841+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 11
+[2025-04-29T09:25:35.841+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 13
+[2025-04-29T09:25:35.842+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local block broadcast_1
+[2025-04-29T09:25:35.842+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task 19 trying to acquire read lock for broadcast_1
+[2025-04-29T09:25:35.842+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 14
+[2025-04-29T09:25:35.843+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 TRACE BlockInfoManager: Task 19 acquired read lock for broadcast_1
+[2025-04-29T09:25:35.843+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Level for block broadcast_1 is StorageLevel(disk, memory, deserialized, 1 replicas)
+[2025-04-29T09:25:35.844+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 12
+[2025-04-29T09:25:35.844+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 11.0 in stage 1.0 (TID 30)
+[2025-04-29T09:25:35.845+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO Executor: Running task 13.0 in stage 1.0 (TID 31)
+[2025-04-29T09:25:35.845+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 15
+[2025-04-29T09:25:35.846+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 16
+[2025-04-29T09:25:35.898+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.899+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.900+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.900+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.901+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.901+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.901+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.902+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.903+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.903+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.904+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.906+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.906+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.907+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.908+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.908+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:25:35.909+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 13-14
+[2025-04-29T09:25:35.909+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 14-15
+[2025-04-29T09:25:35.910+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 5-6
+[2025-04-29T09:25:35.910+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 12-13
+[2025-04-29T09:25:35.911+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 15-16
+[2025-04-29T09:25:35.911+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 6-7
+[2025-04-29T09:25:35.911+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 0-1
+[2025-04-29T09:25:35.912+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 7-8
+[2025-04-29T09:25:35.912+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 3-4
+[2025-04-29T09:25:35.912+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 1-2
+[2025-04-29T09:25:35.913+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 4-5
+[2025-04-29T09:25:35.913+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 9-10
+[2025-04-29T09:25:35.914+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 2-3
+[2025-04-29T09:25:35.914+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 10-11
+[2025-04-29T09:25:35.914+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 11-12
+[2025-04-29T09:25:35.914+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 8-9
+[2025-04-29T09:25:35.935+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.936+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.936+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.936+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.937+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.937+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.938+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.938+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.939+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.939+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.940+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.941+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.941+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.942+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.942+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.943+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:25:35.943+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.944+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.944+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.945+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.946+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.946+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.947+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.948+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.948+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 2 (160.0 B) non-empty blocks including 2 (160.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.949+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.949+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.950+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.950+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.951+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 5 (400.0 B) non-empty blocks including 5 (400.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.951+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.951+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:25:35.952+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.952+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.953+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+[2025-04-29T09:25:35.953+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.953+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.954+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+[2025-04-29T09:25:35.954+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.954+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.955+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.955+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+[2025-04-29T09:25:35.955+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+[2025-04-29T09:25:35.956+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+[2025-04-29T09:25:35.956+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.956+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.957+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:25:35.957+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.957+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_1_5,1), (shuffle_0_4_5,4), (shuffle_0_7_5,7), (shuffle_0_11_5,11), (shuffle_0_14_5,14)
+[2025-04-29T09:25:35.958+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_3_15,3)
+[2025-04-29T09:25:35.958+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:25:35.959+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+[2025-04-29T09:25:35.959+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.960+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.961+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.961+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.962+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.962+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_9_2,9), (shuffle_0_12_2,12)
+[2025-04-29T09:25:35.963+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.963+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_15_12,15)
+[2025-04-29T09:25:35.963+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_6_14,6)
+[2025-04-29T09:25:35.964+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.964+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:25:35.964+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:25:35.965+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 15 ms
+[2025-04-29T09:25:35.965+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_6_14
+[2025-04-29T09:25:35.965+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_15_12
+[2025-04-29T09:25:35.966+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.966+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.966+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.967+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.967+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.967+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_9_2
+[2025-04-29T09:25:35.968+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 14 ms
+[2025-04-29T09:25:35.968+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 14 ms
+[2025-04-29T09:25:35.968+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 14 ms
+[2025-04-29T09:25:35.969+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_1_5
+[2025-04-29T09:25:35.969+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 17 ms
+[2025-04-29T09:25:35.969+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 17 ms
+[2025-04-29T09:25:35.969+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_3_15
+[2025-04-29T09:25:35.970+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_4_5
+[2025-04-29T09:25:35.970+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_12_2
+[2025-04-29T09:25:35.970+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 18 ms
+[2025-04-29T09:25:35.971+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 17 ms
+[2025-04-29T09:25:35.971+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:25:35.971+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 18 ms
+[2025-04-29T09:25:35.972+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_7_5
+[2025-04-29T09:25:35.972+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_11_5
+[2025-04-29T09:25:35.972+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG BlockManager: Getting local shuffle block shuffle_0_14_5
+[2025-04-29T09:25:35.973+0000] {subprocess.py:106} INFO - 25/04/29 09:25:35 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 18 ms
+[2025-04-29T09:25:36.086+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 137, boot = -520, init = 657, finish = 0
+[2025-04-29T09:25:36.089+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 4.0 in stage 1.0 (TID 24). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.090+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 15
+[2025-04-29T09:25:36.091+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 15
+[2025-04-29T09:25:36.091+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG TaskSetManager: No tasks for locality level NODE_LOCAL, so moving to locality level NO_PREF
+[2025-04-29T09:25:36.092+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+[2025-04-29T09:25:36.093+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 24) in 278 ms on e1c8d19e1fe1 (executor driver) (1/16)
+[2025-04-29T09:25:36.099+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 150, boot = -529, init = 678, finish = 1
+[2025-04-29T09:25:36.102+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 7.0 in stage 1.0 (TID 26). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.102+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 14
+[2025-04-29T09:25:36.103+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 26) in 286 ms on e1c8d19e1fe1 (executor driver) (2/16)
+[2025-04-29T09:25:36.103+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 154, boot = -506, init = 660, finish = 0
+[2025-04-29T09:25:36.105+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 15.0 in stage 1.0 (TID 20). 2064 bytes result sent to driver
+[2025-04-29T09:25:36.106+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 13
+[2025-04-29T09:25:36.107+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 20) in 294 ms on e1c8d19e1fe1 (executor driver) (3/16)
+[2025-04-29T09:25:36.112+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 162, boot = -526, init = 688, finish = 0
+[2025-04-29T09:25:36.114+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 158, boot = -538, init = 696, finish = 0
+[2025-04-29T09:25:36.115+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE BlockInfoManager: Task 19 releasing lock for broadcast_1
+[2025-04-29T09:25:36.116+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 10.0 in stage 1.0 (TID 29). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.117+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 12
+[2025-04-29T09:25:36.120+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 14.0 in stage 1.0 (TID 19). 2108 bytes result sent to driver
+[2025-04-29T09:25:36.120+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 29) in 299 ms on e1c8d19e1fe1 (executor driver) (4/16)
+[2025-04-29T09:25:36.121+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 141, boot = -528, init = 669, finish = 0
+[2025-04-29T09:25:36.122+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 12.0 in stage 1.0 (TID 18). 2063 bytes result sent to driver
+[2025-04-29T09:25:36.122+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 11
+[2025-04-29T09:25:36.123+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 10
+[2025-04-29T09:25:36.127+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 19) in 315 ms on e1c8d19e1fe1 (executor driver) (5/16)
+[2025-04-29T09:25:36.128+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 18) in 315 ms on e1c8d19e1fe1 (executor driver) (6/16)
+[2025-04-29T09:25:36.129+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 130, boot = -536, init = 666, finish = 0
+[2025-04-29T09:25:36.129+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 137, boot = -537, init = 673, finish = 1
+[2025-04-29T09:25:36.130+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 11.0 in stage 1.0 (TID 30). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.130+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 5.0 in stage 1.0 (TID 17). 2064 bytes result sent to driver
+[2025-04-29T09:25:36.131+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 9
+[2025-04-29T09:25:36.131+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 8
+[2025-04-29T09:25:36.131+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 17) in 320 ms on e1c8d19e1fe1 (executor driver) (7/16)
+[2025-04-29T09:25:36.132+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 30) in 313 ms on e1c8d19e1fe1 (executor driver) (8/16)
+[2025-04-29T09:25:36.133+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 183, boot = -495, init = 678, finish = 0
+[2025-04-29T09:25:36.134+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 3.0 in stage 1.0 (TID 23). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.135+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 7
+[2025-04-29T09:25:36.136+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 23) in 321 ms on e1c8d19e1fe1 (executor driver) (9/16)
+[2025-04-29T09:25:36.138+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 159, boot = -514, init = 673, finish = 0
+[2025-04-29T09:25:36.138+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 149, boot = -536, init = 685, finish = 0
+[2025-04-29T09:25:36.139+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 174, boot = -540, init = 714, finish = 0
+[2025-04-29T09:25:36.140+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 8.0 in stage 1.0 (TID 27). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.140+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 6
+[2025-04-29T09:25:36.141+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 6.0 in stage 1.0 (TID 25). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.141+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 5
+[2025-04-29T09:25:36.142+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 9.0 in stage 1.0 (TID 28). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.142+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 27) in 324 ms on e1c8d19e1fe1 (executor driver) (10/16)
+[2025-04-29T09:25:36.143+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 4
+[2025-04-29T09:25:36.144+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 25) in 326 ms on e1c8d19e1fe1 (executor driver) (11/16)
+[2025-04-29T09:25:36.144+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 28) in 324 ms on e1c8d19e1fe1 (executor driver) (12/16)
+[2025-04-29T09:25:36.152+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 202, boot = -531, init = 733, finish = 0
+[2025-04-29T09:25:36.154+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 0.0 in stage 1.0 (TID 21). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.154+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 3
+[2025-04-29T09:25:36.155+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 21) in 341 ms on e1c8d19e1fe1 (executor driver) (13/16)
+[2025-04-29T09:25:36.162+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 212, boot = -539, init = 750, finish = 1
+[2025-04-29T09:25:36.164+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 13.0 in stage 1.0 (TID 31). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.164+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+[2025-04-29T09:25:36.165+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 31) in 345 ms on e1c8d19e1fe1 (executor driver) (14/16)
+[2025-04-29T09:25:36.194+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 244, boot = -539, init = 783, finish = 0
+[2025-04-29T09:25:36.195+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 2.0 in stage 1.0 (TID 16). 2104 bytes result sent to driver
+[2025-04-29T09:25:36.196+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+[2025-04-29T09:25:36.196+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 16) in 387 ms on e1c8d19e1fe1 (executor driver) (15/16)
+[2025-04-29T09:25:36.209+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO PythonRunner: Times: total = 259, boot = -527, init = 785, finish = 1
+[2025-04-29T09:25:36.210+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO Executor: Finished task 1.0 in stage 1.0 (TID 22). 2014 bytes result sent to driver
+[2025-04-29T09:25:36.211+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 0
+[2025-04-29T09:25:36.212+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 22) in 398 ms on e1c8d19e1fe1 (executor driver) (16/16)
+[2025-04-29T09:25:36.212+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-04-29T09:25:36.213+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO DAGScheduler: ResultStage 1 (collect at /opt/spark/jobs/wordcount.py:24) finished in 0.416 s
+[2025-04-29T09:25:36.215+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG DAGScheduler: After removal of stage 1, remaining stages = 1
+[2025-04-29T09:25:36.216+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+[2025-04-29T09:25:36.216+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-04-29T09:25:36.216+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-04-29T09:25:36.218+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO DAGScheduler: Job 0 finished: collect at /opt/spark/jobs/wordcount.py:24, took 1.933278 s
+[2025-04-29T09:25:36.223+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Creating listening socket
+[2025-04-29T09:25:36.223+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Setting timeout to 15 sec
+[2025-04-29T09:25:36.224+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Waiting for connection on localhost/127.0.0.1 with port 42613
+[2025-04-29T09:25:36.231+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Connection accepted from address /127.0.0.1:46544
+[2025-04-29T09:25:36.231+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Client authenticated
+[2025-04-29T09:25:36.232+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 TRACE SocketFuncServer: Closing server
+[2025-04-29T09:25:36.232+0000] {subprocess.py:106} INFO - Airflow 1
+[2025-04-29T09:25:36.233+0000] {subprocess.py:106} INFO - Docker 1
+[2025-04-29T09:25:36.233+0000] {subprocess.py:106} INFO - Hello 5
+[2025-04-29T09:25:36.233+0000] {subprocess.py:106} INFO - Nhat 1
+[2025-04-29T09:25:36.234+0000] {subprocess.py:106} INFO - Python 1
+[2025-04-29T09:25:36.234+0000] {subprocess.py:106} INFO - Spark 1
+[2025-04-29T09:25:36.234+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-04-29T09:25:36.244+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO SparkUI: Stopped Spark web UI at http://e1c8d19e1fe1:4040
+[2025-04-29T09:25:36.280+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-04-29T09:25:36.297+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO MemoryStore: MemoryStore cleared
+[2025-04-29T09:25:36.297+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO BlockManager: BlockManager stopped
+[2025-04-29T09:25:36.307+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-04-29T09:25:36.309+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-04-29T09:25:36.321+0000] {subprocess.py:106} INFO - 25/04/29 09:25:36 INFO SparkContext: Successfully stopped SparkContext
+[2025-04-29T09:25:37.246+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 INFO ShutdownHookManager: Shutdown hook called
+[2025-04-29T09:25:37.247+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-ce949d77-df8f-4aef-bfa5-c4de64a35b03
+[2025-04-29T09:25:37.248+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-5d79b1f2-1855-4a77-b62f-4e856c6529c7
+[2025-04-29T09:25:37.250+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-ce949d77-df8f-4aef-bfa5-c4de64a35b03/pyspark-67db82f8-a53c-4a13-883b-c4810cf481cd
+[2025-04-29T09:25:37.253+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 DEBUG FileSystem: FileSystem.close() by method: org.apache.hadoop.fs.FilterFileSystem.close(FilterFileSystem.java:529)); Key: (root (auth:SIMPLE))@file://; URI: file:///; Object Identity Hash: 5419309c
+[2025-04-29T09:25:37.254+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 TRACE FileSystem: FileSystem.close() full stack trace:
+[2025-04-29T09:25:37.254+0000] {subprocess.py:106} INFO - java.lang.Throwable
+[2025-04-29T09:25:37.254+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.debugLogFileSystemClose(FileSystem.java:645)
+[2025-04-29T09:25:37.255+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.close(FileSystem.java:2592)
+[2025-04-29T09:25:37.255+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FilterFileSystem.close(FilterFileSystem.java:529)
+[2025-04-29T09:25:37.255+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem$Cache.closeAll(FileSystem.java:3678)
+[2025-04-29T09:25:37.256+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem$Cache$ClientFinalizer.run(FileSystem.java:3695)
+[2025-04-29T09:25:37.256+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-04-29T09:25:37.257+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-04-29T09:25:37.257+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-04-29T09:25:37.258+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-04-29T09:25:37.258+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:25:37.259+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 DEBUG FileSystem: FileSystem.close() by method: org.apache.hadoop.fs.RawLocalFileSystem.close(RawLocalFileSystem.java:759)); Key: null; URI: file:///; Object Identity Hash: 2e51471
+[2025-04-29T09:25:37.259+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 TRACE FileSystem: FileSystem.close() full stack trace:
+[2025-04-29T09:25:37.260+0000] {subprocess.py:106} INFO - java.lang.Throwable
+[2025-04-29T09:25:37.260+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.debugLogFileSystemClose(FileSystem.java:645)
+[2025-04-29T09:25:37.260+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem.close(FileSystem.java:2592)
+[2025-04-29T09:25:37.261+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.RawLocalFileSystem.close(RawLocalFileSystem.java:759)
+[2025-04-29T09:25:37.261+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FilterFileSystem.close(FilterFileSystem.java:530)
+[2025-04-29T09:25:37.262+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem$Cache.closeAll(FileSystem.java:3678)
+[2025-04-29T09:25:37.262+0000] {subprocess.py:106} INFO - 	at org.apache.hadoop.fs.FileSystem$Cache$ClientFinalizer.run(FileSystem.java:3695)
+[2025-04-29T09:25:37.262+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[2025-04-29T09:25:37.263+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2025-04-29T09:25:37.263+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2025-04-29T09:25:37.263+0000] {subprocess.py:106} INFO - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2025-04-29T09:25:37.264+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:25:37.264+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 DEBUG ShutdownHookManager: Completed shutdown in 0.010 seconds; Timeouts: 0
+[2025-04-29T09:25:37.266+0000] {subprocess.py:106} INFO - 25/04/29 09:25:37 DEBUG ShutdownHookManager: ShutdownHookManager completed shutdown.
+[2025-04-29T09:25:37.300+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-04-29T09:25:37.322+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-29T09:25:37.322+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=spark_***, task_id=spark_wordcount_bash, run_id=manual__2025-04-29T09:25:27.087169+00:00, execution_date=20250429T092527, start_date=20250429T092529, end_date=20250429T092537
+[2025-04-29T09:25:37.354+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:25:37.366+0000] {adapter.py:169} WARNING - Failed to emit OpenLineage `COMPLETE` event of id `019680dd-93af-7452-9947-411d21ef62d7` with the following exception: `HTTPConnectionPool(host='host.docker.internal', port=5000): Max retries exceeded with url: /api/v1/lineage (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f0507ac6450>: Failed to establish a new connection: [Errno 101] Network is unreachable'))`
+[2025-04-29T09:25:37.407+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-29T09:25:37.417+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-29T09:25:37.419+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

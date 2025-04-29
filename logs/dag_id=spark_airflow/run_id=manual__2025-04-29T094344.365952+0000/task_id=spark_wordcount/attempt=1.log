@@ -1,0 +1,805 @@
+[2025-04-29T09:43:47.182+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-29T09:43:47.195+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount manual__2025-04-29T09:43:44.365952+00:00 [queued]>
+[2025-04-29T09:43:47.202+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount manual__2025-04-29T09:43:44.365952+00:00 [queued]>
+[2025-04-29T09:43:47.202+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-29T09:43:47.214+0000] {taskinstance.py:2890} INFO - Executing <Task(SparkSubmitOperator): spark_wordcount> on 2025-04-29 09:43:44.365952+00:00
+[2025-04-29T09:43:47.219+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=83) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:43:47.220+0000] {standard_task_runner.py:72} INFO - Started process 106 to run task
+[2025-04-29T09:43:47.221+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'spark_***', 'spark_wordcount', 'manual__2025-04-29T09:43:44.365952+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/spark_***.py', '--cfg-path', '/tmp/tmp7xz3j6yv']
+[2025-04-29T09:43:47.222+0000] {standard_task_runner.py:105} INFO - Job 15: Subtask spark_wordcount
+[2025-04-29T09:43:47.262+0000] {task_command.py:467} INFO - Running <TaskInstance: spark_airflow.spark_wordcount manual__2025-04-29T09:43:44.365952+00:00 [running]> on host 989354eecf05
+[2025-04-29T09:43:47.325+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_***' AIRFLOW_CTX_TASK_ID='spark_wordcount' AIRFLOW_CTX_EXECUTION_DATE='2025-04-29T09:43:44.365952+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-29T09:43:44.365952+00:00'
+[2025-04-29T09:43:47.331+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/listener.py:477: DeprecationWarning: This process (pid=106) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:43:47.352+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:43:47.423+0000] {adapter.py:162} INFO - Successfully emitted OpenLineage `START` event of id `019680ee-51ed-7547-b588-7fe2e2328d6d`
+[2025-04-29T09:43:47.468+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-29T09:43:47.477+0000] {base.py:84} INFO - Retrieving connection 'spark_connection'
+[2025-04-29T09:43:47.478+0000] {spark_submit.py:474} INFO - Spark-Submit cmd: spark-submit --master spark://sparkflow-spark-master:7077 --num-executors 2 --total-executor-cores 4 --executor-cores 2 --executor-memory 4G --driver-memory 4G --name spark_wordcount --deploy-mode client ./jobs/wordcount.py
+[2025-04-29T09:43:47.527+0000] {spark_submit.py:644} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-04-29T09:43:50.225+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkContext: Running Spark version 3.5.3
+[2025-04-29T09:43:50.227+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-04-29T09:43:50.228+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkContext: Java version 17.0.14
+[2025-04-29T09:43:50.275+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-04-29T09:43:50.339+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceUtils: ==============================================================
+[2025-04-29T09:43:50.340+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-04-29T09:43:50.340+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceUtils: ==============================================================
+[2025-04-29T09:43:50.341+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkContext: Submitted application: PythonWordCount
+[2025-04-29T09:43:50.356+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-04-29T09:43:50.364+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+[2025-04-29T09:43:50.366+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-04-29T09:43:50.407+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SecurityManager: Changing view acls to: ***
+[2025-04-29T09:43:50.408+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SecurityManager: Changing modify acls to: ***
+[2025-04-29T09:43:50.408+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SecurityManager: Changing view acls groups to:
+[2025-04-29T09:43:50.409+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SecurityManager: Changing modify acls groups to:
+[2025-04-29T09:43:50.409+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-04-29T09:43:50.472+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG InternalLoggerFactory: Using SLF4J as the default logging framework
+[2025-04-29T09:43:50.482+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG InternalThreadLocalMap: -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+[2025-04-29T09:43:50.482+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG InternalThreadLocalMap: -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+[2025-04-29T09:43:50.493+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG MultithreadEventLoopGroup: -Dio.netty.eventLoopThreads: 32
+[2025-04-29T09:43:50.498+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG GlobalEventExecutor: -Dio.netty.globalEventExecutor.quietPeriodSeconds: 1
+[2025-04-29T09:43:50.515+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: -Dio.netty.noUnsafe: false
+[2025-04-29T09:43:50.516+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: Java version: 17
+[2025-04-29T09:43:50.516+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: sun.misc.Unsafe.theUnsafe: available
+[2025-04-29T09:43:50.517+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: sun.misc.Unsafe.copyMemory: available
+[2025-04-29T09:43:50.517+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: sun.misc.Unsafe.storeFence: available
+[2025-04-29T09:43:50.518+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: java.nio.Buffer.address: available
+[2025-04-29T09:43:50.518+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: direct buffer constructor: unavailable
+[2025-04-29T09:43:50.519+0000] {spark_submit.py:644} INFO - java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+[2025-04-29T09:43:50.519+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
+[2025-04-29T09:43:50.519+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent0$5.run(PlatformDependent0.java:289)
+[2025-04-29T09:43:50.520+0000] {spark_submit.py:644} INFO - at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+[2025-04-29T09:43:50.520+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:282)
+[2025-04-29T09:43:50.520+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:333)
+[2025-04-29T09:43:50.521+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:88)
+[2025-04-29T09:43:50.521+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:84)
+[2025-04-29T09:43:50.521+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:182)
+[2025-04-29T09:43:50.522+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:38)
+[2025-04-29T09:43:50.522+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+[2025-04-29T09:43:50.522+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:60)
+[2025-04-29T09:43:50.523+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:49)
+[2025-04-29T09:43:50.523+0000] {spark_submit.py:644} INFO - at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+[2025-04-29T09:43:50.523+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:87)
+[2025-04-29T09:43:50.523+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:82)
+[2025-04-29T09:43:50.524+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:69)
+[2025-04-29T09:43:50.524+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.util.NettyUtils.createEventLoop(NettyUtils.java:70)
+[2025-04-29T09:43:50.524+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.client.TransportClientFactory.<init>(TransportClientFactory.java:106)
+[2025-04-29T09:43:50.525+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.TransportContext.createClientFactory(TransportContext.java:144)
+[2025-04-29T09:43:50.525+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.<init>(NettyRpcEnv.scala:77)
+[2025-04-29T09:43:50.525+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.netty.NettyRpcEnvFactory.create(NettyRpcEnv.scala:492)
+[2025-04-29T09:43:50.526+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.RpcEnv$.create(RpcEnv.scala:58)
+[2025-04-29T09:43:50.526+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkEnv$.create(SparkEnv.scala:271)
+[2025-04-29T09:43:50.526+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)
+[2025-04-29T09:43:50.526+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:284)
+[2025-04-29T09:43:50.527+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:478)
+[2025-04-29T09:43:50.527+0000] {spark_submit.py:644} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-04-29T09:43:50.527+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-04-29T09:43:50.528+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-04-29T09:43:50.528+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-04-29T09:43:50.528+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-04-29T09:43:50.528+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-04-29T09:43:50.529+0000] {spark_submit.py:644} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-04-29T09:43:50.529+0000] {spark_submit.py:644} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-04-29T09:43:50.529+0000] {spark_submit.py:644} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-04-29T09:43:50.530+0000] {spark_submit.py:644} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-04-29T09:43:50.530+0000] {spark_submit.py:644} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-04-29T09:43:50.530+0000] {spark_submit.py:644} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-04-29T09:43:50.531+0000] {spark_submit.py:644} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-04-29T09:43:50.531+0000] {spark_submit.py:644} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:43:50.531+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: java.nio.Bits.unaligned: available, true
+[2025-04-29T09:43:50.532+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+[2025-04-29T09:43:50.532+0000] {spark_submit.py:644} INFO - java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$7 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @1d296da
+[2025-04-29T09:43:50.532+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:392)
+[2025-04-29T09:43:50.533+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:674)
+[2025-04-29T09:43:50.533+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:561)
+[2025-04-29T09:43:50.533+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent0$7.run(PlatformDependent0.java:411)
+[2025-04-29T09:43:50.534+0000] {spark_submit.py:644} INFO - at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+[2025-04-29T09:43:50.534+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:402)
+[2025-04-29T09:43:50.534+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:333)
+[2025-04-29T09:43:50.535+0000] {spark_submit.py:644} INFO - at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:88)
+[2025-04-29T09:43:50.535+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoop.<clinit>(NioEventLoop.java:84)
+[2025-04-29T09:43:50.535+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:182)
+[2025-04-29T09:43:50.536+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:38)
+[2025-04-29T09:43:50.536+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:84)
+[2025-04-29T09:43:50.536+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:60)
+[2025-04-29T09:43:50.537+0000] {spark_submit.py:644} INFO - at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:49)
+[2025-04-29T09:43:50.537+0000] {spark_submit.py:644} INFO - at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:59)
+[2025-04-29T09:43:50.537+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:87)
+[2025-04-29T09:43:50.537+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:82)
+[2025-04-29T09:43:50.538+0000] {spark_submit.py:644} INFO - at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:69)
+[2025-04-29T09:43:50.538+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.util.NettyUtils.createEventLoop(NettyUtils.java:70)
+[2025-04-29T09:43:50.538+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.client.TransportClientFactory.<init>(TransportClientFactory.java:106)
+[2025-04-29T09:43:50.539+0000] {spark_submit.py:644} INFO - at org.apache.spark.network.TransportContext.createClientFactory(TransportContext.java:144)
+[2025-04-29T09:43:50.539+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.netty.NettyRpcEnv.<init>(NettyRpcEnv.scala:77)
+[2025-04-29T09:43:50.539+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.netty.NettyRpcEnvFactory.create(NettyRpcEnv.scala:492)
+[2025-04-29T09:43:50.540+0000] {spark_submit.py:644} INFO - at org.apache.spark.rpc.RpcEnv$.create(RpcEnv.scala:58)
+[2025-04-29T09:43:50.540+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkEnv$.create(SparkEnv.scala:271)
+[2025-04-29T09:43:50.540+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)
+[2025-04-29T09:43:50.541+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:284)
+[2025-04-29T09:43:50.541+0000] {spark_submit.py:644} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:478)
+[2025-04-29T09:43:50.542+0000] {spark_submit.py:644} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2025-04-29T09:43:50.542+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2025-04-29T09:43:50.542+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2025-04-29T09:43:50.542+0000] {spark_submit.py:644} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2025-04-29T09:43:50.543+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2025-04-29T09:43:50.543+0000] {spark_submit.py:644} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2025-04-29T09:43:50.543+0000] {spark_submit.py:644} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2025-04-29T09:43:50.544+0000] {spark_submit.py:644} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-04-29T09:43:50.544+0000] {spark_submit.py:644} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2025-04-29T09:43:50.544+0000] {spark_submit.py:644} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2025-04-29T09:43:50.545+0000] {spark_submit.py:644} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2025-04-29T09:43:50.545+0000] {spark_submit.py:644} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-04-29T09:43:50.545+0000] {spark_submit.py:644} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-04-29T09:43:50.546+0000] {spark_submit.py:644} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2025-04-29T09:43:50.546+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent0: java.nio.DirectByteBuffer.<init>(long, {int,long}): unavailable
+[2025-04-29T09:43:50.546+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: sun.misc.Unsafe: available
+[2025-04-29T09:43:50.546+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: maxDirectMemory: 4294967296 bytes (maybe)
+[2025-04-29T09:43:50.547+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+[2025-04-29T09:43:50.547+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[2025-04-29T09:43:50.547+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: -Dio.netty.maxDirectMemory: -1 bytes
+[2025-04-29T09:43:50.547+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: -Dio.netty.uninitializedArrayAllocationThreshold: -1
+[2025-04-29T09:43:50.548+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG CleanerJava9: java.nio.ByteBuffer.cleaner(): available
+[2025-04-29T09:43:50.548+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: -Dio.netty.noPreferDirect: false
+[2025-04-29T09:43:50.548+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NioEventLoop: -Dio.netty.noKeySetOptimization: false
+[2025-04-29T09:43:50.548+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NioEventLoop: -Dio.netty.selectorAutoRebuildThreshold: 512
+[2025-04-29T09:43:50.549+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PlatformDependent: org.jctools-core.MpscChunkedArrayQueue: available
+[2025-04-29T09:43:50.549+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6cbf4d13
+[2025-04-29T09:43:50.549+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4ed6100e
+[2025-04-29T09:43:50.550+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6cc4b296
+[2025-04-29T09:43:50.550+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7c3fcac3
+[2025-04-29T09:43:50.550+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@72716ea1
+[2025-04-29T09:43:50.550+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@cd95681
+[2025-04-29T09:43:50.551+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@45c0158e
+[2025-04-29T09:43:50.551+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@47abb627
+[2025-04-29T09:43:50.551+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG ResourceLeakDetector: -Dio.netty.leakDetection.level: simple
+[2025-04-29T09:43:50.552+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG ResourceLeakDetector: -Dio.netty.leakDetection.targetRecords: 4
+[2025-04-29T09:43:50.552+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numHeapArenas: 32
+[2025-04-29T09:43:50.552+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numDirectArenas: 32
+[2025-04-29T09:43:50.553+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.pageSize: 8192
+[2025-04-29T09:43:50.553+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxOrder: 9
+[2025-04-29T09:43:50.553+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.chunkSize: 4194304
+[2025-04-29T09:43:50.553+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.smallCacheSize: 256
+[2025-04-29T09:43:50.554+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.normalCacheSize: 64
+[2025-04-29T09:43:50.554+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[2025-04-29T09:43:50.554+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.cacheTrimInterval: 8192
+[2025-04-29T09:43:50.555+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+[2025-04-29T09:43:50.555+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.useCacheForAllThreads: false
+[2025-04-29T09:43:50.555+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+[2025-04-29T09:43:50.557+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@24c09491
+[2025-04-29T09:43:50.557+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@386f3aee
+[2025-04-29T09:43:50.557+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@66caa8d6
+[2025-04-29T09:43:50.558+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@468edc82
+[2025-04-29T09:43:50.558+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@440d944d
+[2025-04-29T09:43:50.558+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@5f46e68
+[2025-04-29T09:43:50.559+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@364bfa18
+[2025-04-29T09:43:50.559+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@6115a9f
+[2025-04-29T09:43:50.559+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2e9609ec
+[2025-04-29T09:43:50.569+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG DefaultChannelId: -Dio.netty.processId: 118 (auto-detected)
+[2025-04-29T09:43:50.570+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NetUtil: -Djava.net.preferIPv4Stack: false
+[2025-04-29T09:43:50.570+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NetUtil: -Djava.net.preferIPv6Addresses: false
+[2025-04-29T09:43:50.571+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NetUtilInitializations: Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+[2025-04-29T09:43:50.572+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG NetUtil: /proc/sys/net/core/somaxconn: 4096
+[2025-04-29T09:43:50.573+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG DefaultChannelId: -Dio.netty.machineId: 3e:78:cc:ff:fe:98:db:89 (auto-detected)
+[2025-04-29T09:43:50.586+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG ByteBufUtil: -Dio.netty.allocator.type: pooled
+[2025-04-29T09:43:50.587+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG ByteBufUtil: -Dio.netty.threadLocalDirectBufferSize: 0
+[2025-04-29T09:43:50.587+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG ByteBufUtil: -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[2025-04-29T09:43:50.595+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG TransportServer: Shuffle server started on 172.21.0.10 with port 38145
+[2025-04-29T09:43:50.605+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO Utils: Successfully started service 'sparkDriver' on port 38145.
+[2025-04-29T09:43:50.608+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG SparkEnv: Using serializer: class org.apache.spark.serializer.JavaSerializer
+[2025-04-29T09:43:50.625+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkEnv: Registering MapOutputTracker
+[2025-04-29T09:43:50.626+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG MapOutputTrackerMasterEndpoint: init
+[2025-04-29T09:43:50.651+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkEnv: Registering BlockManagerMaster
+[2025-04-29T09:43:50.665+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-04-29T09:43:50.666+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-04-29T09:43:50.669+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-04-29T09:43:50.683+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-05dab2ef-b5dc-4f08-98c3-5d2260d0fb51
+[2025-04-29T09:43:50.685+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG DiskBlockManager: Adding shutdown hook
+[2025-04-29T09:43:50.694+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+[2025-04-29T09:43:50.705+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-04-29T09:43:50.706+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: init
+[2025-04-29T09:43:50.714+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG SecurityManager: Created SSL options for ui: SSLOptions{enabled=false, port=None, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+[2025-04-29T09:43:50.805+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-04-29T09:43:50.837+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG JettyUtils: Using requestHeaderSize: 8192
+[2025-04-29T09:43:50.837+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG JettyUtils: Using setSendServerVersion: false
+[2025-04-29T09:43:50.838+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 DEBUG JettyUtils: Using setSendXPoweredBy: false
+[2025-04-29T09:43:50.867+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-04-29T09:43:50.931+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 TRACE HeartbeatReceiver: Checking for hosts with no recent heartbeats in HeartbeatReceiver.
+[2025-04-29T09:43:50.984+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO Executor: Starting executor ID driver on host 989354eecf05
+[2025-04-29T09:43:50.985+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO Executor: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-04-29T09:43:50.985+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:50 INFO Executor: Java version 17.0.14
+[2025-04-29T09:43:51.004+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-04-29T09:43:51.006+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@d6d3f83 for default.
+[2025-04-29T09:43:51.036+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@17725c58
+[2025-04-29T09:43:51.037+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@1aa06bad
+[2025-04-29T09:43:51.038+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3d7ba8ec
+[2025-04-29T09:43:51.038+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@21d3e2f2
+[2025-04-29T09:43:51.039+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@2446ea0c
+[2025-04-29T09:43:51.040+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3da2102a
+[2025-04-29T09:43:51.040+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@5d7ee3ba
+[2025-04-29T09:43:51.041+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@63044e95
+[2025-04-29T09:43:51.042+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3a771940
+[2025-04-29T09:43:51.042+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@49c75b06
+[2025-04-29T09:43:51.043+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@23cc4e09
+[2025-04-29T09:43:51.043+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@21f3ee29
+[2025-04-29T09:43:51.044+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@456e28ab
+[2025-04-29T09:43:51.044+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@3602446b
+[2025-04-29T09:43:51.045+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@77ffe8a4
+[2025-04-29T09:43:51.045+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@4943d2d4
+[2025-04-29T09:43:51.046+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE NioEventLoop: instrumented a special java.util.Set into: sun.nio.ch.EPollSelectorImpl@7ddc9027
+[2025-04-29T09:43:51.047+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TransportServer: Shuffle server started on 172.21.0.10 with port 45953
+[2025-04-29T09:43:51.047+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45953.
+[2025-04-29T09:43:51.048+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO NettyBlockTransferService: Server created on 989354eecf05:45953
+[2025-04-29T09:43:51.048+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-04-29T09:43:51.054+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:51.056+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DefaultTopologyMapper: Got a request for 989354eecf05
+[2025-04-29T09:43:51.058+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManagerMasterEndpoint: Registering block manager 989354eecf05:45953 with 2.2 GiB RAM, BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:51.060+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:51.062+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:51.255+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG SparkContext: Adding shutdown hook
+[2025-04-29T09:43:51.606+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$valueOfPair$1
+[2025-04-29T09:43:51.620+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$valueOfPair$1) is now cleaned +++
+[2025-04-29T09:43:51.642+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$collect$2
+[2025-04-29T09:43:51.653+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$collect$2) is now cleaned +++
+[2025-04-29T09:43:51.701+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$runJob$5
+[2025-04-29T09:43:51.708+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$runJob$5) is now cleaned +++
+[2025-04-29T09:43:51.711+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO SparkContext: Starting job: collect at /opt/***/jobs/wordcount.py:24
+[2025-04-29T09:43:51.725+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: eagerlyComputePartitionsForRddAndAncestors for RDD 5 took 0.013036 seconds
+[2025-04-29T09:43:51.730+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+[2025-04-29T09:43:51.732+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+[2025-04-29T09:43:51.740+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /opt/***/jobs/wordcount.py:22) as input to shuffle 0
+[2025-04-29T09:43:51.745+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Got job 0 (collect at /opt/***/jobs/wordcount.py:24) with 16 output partitions
+[2025-04-29T09:43:51.746+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Final stage: ResultStage 1 (collect at /opt/***/jobs/wordcount.py:24)
+[2025-04-29T09:43:51.746+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+[2025-04-29T09:43:51.748+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+[2025-04-29T09:43:51.750+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=collect at /opt/***/jobs/wordcount.py:24;jobs=0))
+[2025-04-29T09:43:51.751+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: missing: List(ShuffleMapStage 0)
+[2025-04-29T09:43:51.751+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: submitStage(ShuffleMapStage 0 (name=reduceByKey at /opt/***/jobs/wordcount.py:22;jobs=0))
+[2025-04-29T09:43:51.752+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: missing: List()
+[2025-04-29T09:43:51.753+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /opt/***/jobs/wordcount.py:22), which has no missing parents
+[2025-04-29T09:43:51.754+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG DAGScheduler: submitMissingTasks(ShuffleMapStage 0)
+[2025-04-29T09:43:51.802+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0
+[2025-04-29T09:43:51.804+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+[2025-04-29T09:43:51.806+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+[2025-04-29T09:43:51.832+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 10.9 KiB, free 2.2 GiB)
+[2025-04-29T09:43:51.834+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManager: Put block broadcast_0 locally took 27 ms
+[2025-04-29T09:43:51.835+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0
+[2025-04-29T09:43:51.836+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManager: Putting block broadcast_0 without replication took 28 ms
+[2025-04-29T09:43:51.860+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0_piece0
+[2025-04-29T09:43:51.861+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+[2025-04-29T09:43:51.862+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+[2025-04-29T09:43:51.863+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.0 KiB, free 2.2 GiB)
+[2025-04-29T09:43:51.865+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:51.867+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 989354eecf05:45953 (size: 7.0 KiB, free: 2.2 GiB)
+[2025-04-29T09:43:51.871+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+[2025-04-29T09:43:51.872+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManager: Told master about block broadcast_0_piece0
+[2025-04-29T09:43:51.873+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManager: Put block broadcast_0_piece0 locally took 11 ms
+[2025-04-29T09:43:51.873+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0_piece0
+[2025-04-29T09:43:51.874+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took 11 ms
+[2025-04-29T09:43:51.875+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2025-04-29T09:43:51.896+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /opt/***/jobs/wordcount.py:22) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2025-04-29T09:43:51.897+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSchedulerImpl: Adding task set 0.0 with 16 tasks resource profile 0
+[2025-04-29T09:43:51.912+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+[2025-04-29T09:43:51.918+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TaskSetManager: Adding pending tasks took 3 ms
+[2025-04-29T09:43:51.920+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+[2025-04-29T09:43:51.937+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 0
+[2025-04-29T09:43:51.938+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+[2025-04-29T09:43:51.966+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (989354eecf05, executor driver, partition 0, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.971+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (989354eecf05, executor driver, partition 1, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.975+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (989354eecf05, executor driver, partition 2, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.976+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (989354eecf05, executor driver, partition 3, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.976+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (989354eecf05, executor driver, partition 4, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.977+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (989354eecf05, executor driver, partition 5, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.978+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (989354eecf05, executor driver, partition 6, PROCESS_LOCAL, 9002 bytes)
+[2025-04-29T09:43:51.979+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (989354eecf05, executor driver, partition 7, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.980+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (989354eecf05, executor driver, partition 8, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.980+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (989354eecf05, executor driver, partition 9, PROCESS_LOCAL, 9003 bytes)
+[2025-04-29T09:43:51.981+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (989354eecf05, executor driver, partition 10, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.981+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (989354eecf05, executor driver, partition 11, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.982+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (989354eecf05, executor driver, partition 12, PROCESS_LOCAL, 9002 bytes)
+[2025-04-29T09:43:51.984+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (989354eecf05, executor driver, partition 13, PROCESS_LOCAL, 8968 bytes)
+[2025-04-29T09:43:51.989+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (989354eecf05, executor driver, partition 14, PROCESS_LOCAL, 9001 bytes)
+[2025-04-29T09:43:51.990+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:51 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (989354eecf05, executor driver, partition 15, PROCESS_LOCAL, 9000 bytes)
+[2025-04-29T09:43:52.002+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+[2025-04-29T09:43:52.003+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+[2025-04-29T09:43:52.004+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+[2025-04-29T09:43:52.006+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+[2025-04-29T09:43:52.008+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+[2025-04-29T09:43:52.009+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2025-04-29T09:43:52.011+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+[2025-04-29T09:43:52.013+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+[2025-04-29T09:43:52.014+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+[2025-04-29T09:43:52.015+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 12.0 in stage 0.0 (TID 12)
+[2025-04-29T09:43:52.016+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+[2025-04-29T09:43:52.016+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 13.0 in stage 0.0 (TID 13)
+[2025-04-29T09:43:52.017+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 14.0 in stage 0.0 (TID 14)
+[2025-04-29T09:43:52.017+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 15.0 in stage 0.0 (TID 15)
+[2025-04-29T09:43:52.018+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+[2025-04-29T09:43:52.019+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+[2025-04-29T09:43:52.021+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 4
+[2025-04-29T09:43:52.022+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 3
+[2025-04-29T09:43:52.040+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+[2025-04-29T09:43:52.041+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 7
+[2025-04-29T09:43:52.043+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 5
+[2025-04-29T09:43:52.044+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 6
+[2025-04-29T09:43:52.045+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+[2025-04-29T09:43:52.047+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 8
+[2025-04-29T09:43:52.050+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 9
+[2025-04-29T09:43:52.051+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 10
+[2025-04-29T09:43:52.051+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 11
+[2025-04-29T09:43:52.052+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 12
+[2025-04-29T09:43:52.053+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 13
+[2025-04-29T09:43:52.053+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 14
+[2025-04-29T09:43:52.054+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 15
+[2025-04-29T09:43:52.054+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 16
+[2025-04-29T09:43:52.055+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG BlockManager: Getting local block broadcast_0
+[2025-04-29T09:43:52.056+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 TRACE BlockInfoManager: Task 2 trying to acquire read lock for broadcast_0
+[2025-04-29T09:43:52.064+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 TRACE BlockInfoManager: Task 2 acquired read lock for broadcast_0
+[2025-04-29T09:43:52.065+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:52 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+[2025-04-29T09:43:53.570+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1461, boot = 1082, init = 378, finish = 1
+[2025-04-29T09:43:53.571+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1464, boot = 1110, init = 353, finish = 1
+[2025-04-29T09:43:53.571+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1458, boot = 1082, init = 375, finish = 1
+[2025-04-29T09:43:53.572+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 0 with length 16
+[2025-04-29T09:43:53.573+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1460, boot = 1088, init = 371, finish = 1
+[2025-04-29T09:43:53.574+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 13 with length 16
+[2025-04-29T09:43:53.574+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 10 with length 16
+[2025-04-29T09:43:53.575+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 2 with length 16
+[2025-04-29T09:43:53.582+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 13: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.583+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 10: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.602+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1492, boot = 1124, init = 368, finish = 0
+[2025-04-29T09:43:53.603+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 5 with length 16
+[2025-04-29T09:43:53.626+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 2: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.627+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task 2 releasing lock for broadcast_0
+[2025-04-29T09:43:53.630+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 1423 bytes result sent to driver
+[2025-04-29T09:43:53.632+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 5: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.634+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 0: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.635+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 1380 bytes result sent to driver
+[2025-04-29T09:43:53.638+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1380 bytes result sent to driver
+[2025-04-29T09:43:53.639+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1423 bytes result sent to driver
+[2025-04-29T09:43:53.641+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 13.0 in stage 0.0 (TID 13). 1423 bytes result sent to driver
+[2025-04-29T09:43:53.642+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 15
+[2025-04-29T09:43:53.643+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 14
+[2025-04-29T09:43:53.643+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 13
+[2025-04-29T09:43:53.644+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 12
+[2025-04-29T09:43:53.645+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 11
+[2025-04-29T09:43:53.645+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 15
+[2025-04-29T09:43:53.646+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+[2025-04-29T09:43:53.652+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 1671 ms on 989354eecf05 (executor driver) (1/16)
+[2025-04-29T09:43:53.653+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 1678 ms on 989354eecf05 (executor driver) (2/16)
+[2025-04-29T09:43:53.654+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1705 ms on 989354eecf05 (executor driver) (3/16)
+[2025-04-29T09:43:53.656+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 1683 ms on 989354eecf05 (executor driver) (4/16)
+[2025-04-29T09:43:53.657+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 1673 ms on 989354eecf05 (executor driver) (5/16)
+[2025-04-29T09:43:53.658+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 49291
+[2025-04-29T09:43:53.663+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.665+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.667+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.668+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.669+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.719+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1610, boot = 1128, init = 481, finish = 1
+[2025-04-29T09:43:53.720+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 8 with length 16
+[2025-04-29T09:43:53.720+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 8: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.722+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 1380 bytes result sent to driver
+[2025-04-29T09:43:53.723+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 10
+[2025-04-29T09:43:53.724+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 1747 ms on 989354eecf05 (executor driver) (6/16)
+[2025-04-29T09:43:53.726+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.900+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1492, boot = 1068, init = 394, finish = 30
+[2025-04-29T09:43:53.901+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1460, boot = 1090, init = 369, finish = 1
+[2025-04-29T09:43:53.901+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1458, boot = 1076, init = 381, finish = 1
+[2025-04-29T09:43:53.902+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1485, boot = 1077, init = 406, finish = 2
+[2025-04-29T09:43:53.903+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1470, boot = 1111, init = 357, finish = 2
+[2025-04-29T09:43:53.903+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1458, boot = 1116, init = 341, finish = 1
+[2025-04-29T09:43:53.903+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1548, boot = 1121, init = 426, finish = 1
+[2025-04-29T09:43:53.904+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1477, boot = 1133, init = 341, finish = 3
+[2025-04-29T09:43:53.904+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1458, boot = 1069, init = 388, finish = 1
+[2025-04-29T09:43:53.905+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO PythonRunner: Times: total = 1464, boot = 1065, init = 398, finish = 1
+[2025-04-29T09:43:53.911+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 15 with length 16
+[2025-04-29T09:43:53.912+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 12 with length 16
+[2025-04-29T09:43:53.913+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 4 with length 16
+[2025-04-29T09:43:53.913+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 6 with length 16
+[2025-04-29T09:43:53.914+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 3 with length 16
+[2025-04-29T09:43:53.914+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 7 with length 16
+[2025-04-29T09:43:53.915+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 1 with length 16
+[2025-04-29T09:43:53.915+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 11 with length 16
+[2025-04-29T09:43:53.916+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 9 with length 16
+[2025-04-29T09:43:53.916+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 14 with length 16
+[2025-04-29T09:43:53.917+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 14: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.918+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 15: [0,0,0,0,0,0,0,0,0,0,0,0,76,0,0,0]
+[2025-04-29T09:43:53.918+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 4: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.919+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 9: [0,0,79,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.919+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 6: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,78,0]
+[2025-04-29T09:43:53.920+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 1: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.920+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 12: [0,0,78,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.921+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 15.0 in stage 0.0 (TID 15). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.921+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 14.0 in stage 0.0 (TID 14). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.922+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.922+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 9
+[2025-04-29T09:43:53.923+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 3: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,77]
+[2025-04-29T09:43:53.923+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 8
+[2025-04-29T09:43:53.924+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 7
+[2025-04-29T09:43:53.924+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.924+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.925+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.925+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 12.0 in stage 0.0 (TID 12). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.926+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 6
+[2025-04-29T09:43:53.926+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 5
+[2025-04-29T09:43:53.926+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 1933 ms on 989354eecf05 (executor driver) (7/16)
+[2025-04-29T09:43:53.927+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 4
+[2025-04-29T09:43:53.927+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 3
+[2025-04-29T09:43:53.928+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 7: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.928+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 1935 ms on 989354eecf05 (executor driver) (8/16)
+[2025-04-29T09:43:53.929+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 11: [0,0,0,0,0,77,0,0,0,0,0,0,0,0,0,0]
+[2025-04-29T09:43:53.929+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.930+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 1946 ms on 989354eecf05 (executor driver) (9/16)
+[2025-04-29T09:43:53.930+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+[2025-04-29T09:43:53.931+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.931+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 1945 ms on 989354eecf05 (executor driver) (10/16)
+[2025-04-29T09:43:53.932+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.932+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+[2025-04-29T09:43:53.933+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1950 ms on 989354eecf05 (executor driver) (11/16)
+[2025-04-29T09:43:53.933+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 1509 bytes result sent to driver
+[2025-04-29T09:43:53.933+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 0
+[2025-04-29T09:43:53.934+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.934+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 1940 ms on 989354eecf05 (executor driver) (12/16)
+[2025-04-29T09:43:53.935+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 1943 ms on 989354eecf05 (executor driver) (13/16)
+[2025-04-29T09:43:53.935+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 1950 ms on 989354eecf05 (executor driver) (14/16)
+[2025-04-29T09:43:53.936+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.936+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 1947 ms on 989354eecf05 (executor driver) (15/16)
+[2025-04-29T09:43:53.937+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.937+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 1943 ms on 989354eecf05 (executor driver) (16/16)
+[2025-04-29T09:43:53.938+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-04-29T09:43:53.938+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.939+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.939+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.939+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.940+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.940+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+[2025-04-29T09:43:53.941+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /opt/***/jobs/wordcount.py:22) finished in 2.162 s
+[2025-04-29T09:43:53.941+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: looking for newly runnable stages
+[2025-04-29T09:43:53.941+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: running: Set()
+[2025-04-29T09:43:53.942+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: waiting: Set(ResultStage 1)
+[2025-04-29T09:43:53.942+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: failed: Set()
+[2025-04-29T09:43:53.943+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG MapOutputTrackerMaster: Increasing epoch to 1
+[2025-04-29T09:43:53.943+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE DAGScheduler: Checking if any dependencies of ShuffleMapStage 0 are now runnable
+[2025-04-29T09:43:53.943+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE DAGScheduler: running: Set()
+[2025-04-29T09:43:53.944+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE DAGScheduler: waiting: Set(ResultStage 1)
+[2025-04-29T09:43:53.944+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE DAGScheduler: failed: Set()
+[2025-04-29T09:43:53.945+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=collect at /opt/***/jobs/wordcount.py:24;jobs=0))
+[2025-04-29T09:43:53.945+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: missing: List()
+[2025-04-29T09:43:53.946+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /opt/***/jobs/wordcount.py:24), which has no missing parents
+[2025-04-29T09:43:53.946+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG DAGScheduler: submitMissingTasks(ResultStage 1)
+[2025-04-29T09:43:53.950+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1
+[2025-04-29T09:43:53.951+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1
+[2025-04-29T09:43:53.951+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1
+[2025-04-29T09:43:53.952+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 10.0 KiB, free 2.2 GiB)
+[2025-04-29T09:43:53.952+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Put block broadcast_1 locally took 1 ms
+[2025-04-29T09:43:53.953+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1
+[2025-04-29T09:43:53.953+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Putting block broadcast_1 without replication took 1 ms
+[2025-04-29T09:43:53.954+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1_piece0
+[2025-04-29T09:43:53.955+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1_piece0
+[2025-04-29T09:43:53.955+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1_piece0
+[2025-04-29T09:43:53.956+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.0 KiB, free 2.2 GiB)
+[2025-04-29T09:43:53.958+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_1_piece0 for BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:53.958+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 989354eecf05:45953 (size: 6.0 KiB, free: 2.2 GiB)
+[2025-04-29T09:43:53.959+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManagerMaster: Updated info of block broadcast_1_piece0
+[2025-04-29T09:43:53.959+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Told master about block broadcast_1_piece0
+[2025-04-29T09:43:53.960+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Put block broadcast_1_piece0 locally took 2 ms
+[2025-04-29T09:43:53.961+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1_piece0
+[2025-04-29T09:43:53.961+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Putting block broadcast_1_piece0 without replication took 2 ms
+[2025-04-29T09:43:53.962+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2025-04-29T09:43:53.963+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /opt/***/jobs/wordcount.py:24) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+[2025-04-29T09:43:53.963+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSchedulerImpl: Adding task set 1.0 with 16 tasks resource profile 0
+[2025-04-29T09:43:53.964+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: Epoch for TaskSet 1.0: 1
+[2025-04-29T09:43:53.964+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: Adding pending tasks took 1 ms
+[2025-04-29T09:43:53.965+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: Valid locality levels for TaskSet 1.0: NODE_LOCAL, NO_PREF, ANY
+[2025-04-29T09:43:53.966+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 0
+[2025-04-29T09:43:53.970+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 16) (989354eecf05, executor driver, partition 2, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.971+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 17) (989354eecf05, executor driver, partition 5, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.971+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 12.0 in stage 1.0 (TID 18) (989354eecf05, executor driver, partition 12, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.972+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 14.0 in stage 1.0 (TID 19) (989354eecf05, executor driver, partition 14, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.973+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 15.0 in stage 1.0 (TID 20) (989354eecf05, executor driver, partition 15, NODE_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.973+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: No tasks for locality level NODE_LOCAL, so moving to locality level NO_PREF
+[2025-04-29T09:43:53.974+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG TaskSetManager: Moving to ANY after waiting for 0ms
+[2025-04-29T09:43:53.974+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 21) (989354eecf05, executor driver, partition 0, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.975+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 22) (989354eecf05, executor driver, partition 1, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.975+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 23) (989354eecf05, executor driver, partition 3, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.976+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 24) (989354eecf05, executor driver, partition 4, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.977+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 25) (989354eecf05, executor driver, partition 6, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.977+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 26) (989354eecf05, executor driver, partition 7, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.978+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 27) (989354eecf05, executor driver, partition 8, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.979+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 28) (989354eecf05, executor driver, partition 9, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.979+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 29) (989354eecf05, executor driver, partition 10, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.980+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 30) (989354eecf05, executor driver, partition 11, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.980+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO TaskSetManager: Starting task 13.0 in stage 1.0 (TID 31) (989354eecf05, executor driver, partition 13, PROCESS_LOCAL, 8817 bytes)
+[2025-04-29T09:43:53.981+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 2.0 in stage 1.0 (TID 16)
+[2025-04-29T09:43:53.983+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 12.0 in stage 1.0 (TID 18)
+[2025-04-29T09:43:53.984+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 14.0 in stage 1.0 (TID 19)
+[2025-04-29T09:43:53.985+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 15.0 in stage 1.0 (TID 20)
+[2025-04-29T09:43:53.986+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 5.0 in stage 1.0 (TID 17)
+[2025-04-29T09:43:53.986+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 0.0 in stage 1.0 (TID 21)
+[2025-04-29T09:43:53.987+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 1.0 in stage 1.0 (TID 22)
+[2025-04-29T09:43:53.987+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 4.0 in stage 1.0 (TID 24)
+[2025-04-29T09:43:53.988+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 3.0 in stage 1.0 (TID 23)
+[2025-04-29T09:43:53.988+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 7.0 in stage 1.0 (TID 26)
+[2025-04-29T09:43:53.989+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 8.0 in stage 1.0 (TID 27)
+[2025-04-29T09:43:53.989+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 6.0 in stage 1.0 (TID 25)
+[2025-04-29T09:43:53.990+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 9.0 in stage 1.0 (TID 28)
+[2025-04-29T09:43:53.991+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 10.0 in stage 1.0 (TID 29)
+[2025-04-29T09:43:53.991+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+[2025-04-29T09:43:53.992+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+[2025-04-29T09:43:53.992+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 5
+[2025-04-29T09:43:53.993+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 6
+[2025-04-29T09:43:53.993+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 11.0 in stage 1.0 (TID 30)
+[2025-04-29T09:43:53.994+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 7
+[2025-04-29T09:43:53.994+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 INFO Executor: Running task 13.0 in stage 1.0 (TID 31)
+[2025-04-29T09:43:53.995+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 4
+[2025-04-29T09:43:53.995+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 3
+[2025-04-29T09:43:53.995+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 8
+[2025-04-29T09:43:53.996+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 9
+[2025-04-29T09:43:53.996+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 10
+[2025-04-29T09:43:53.997+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 11
+[2025-04-29T09:43:53.998+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Getting local block broadcast_1
+[2025-04-29T09:43:53.999+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task 26 trying to acquire read lock for broadcast_1
+[2025-04-29T09:43:53.999+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 12
+[2025-04-29T09:43:54.000+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 TRACE BlockInfoManager: Task 26 acquired read lock for broadcast_1
+[2025-04-29T09:43:54.001+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG BlockManager: Level for block broadcast_1 is StorageLevel(disk, memory, deserialized, 1 replicas)
+[2025-04-29T09:43:54.004+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 13
+[2025-04-29T09:43:54.006+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 14
+[2025-04-29T09:43:54.007+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 15
+[2025-04-29T09:43:54.007+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 16
+[2025-04-29T09:43:54.008+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:53 DEBUG ContextCleaner: Got cleaning task CleanBroadcast(0)
+[2025-04-29T09:43:54.009+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ContextCleaner: Cleaning broadcast 0
+[2025-04-29T09:43:54.009+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG TorrentBroadcast: Unpersisting TorrentBroadcast 0
+[2025-04-29T09:43:54.062+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManagerStorageEndpoint: removing broadcast 0
+[2025-04-29T09:43:54.062+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Removing broadcast 0
+[2025-04-29T09:43:54.064+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Removing block broadcast_0_piece0
+[2025-04-29T09:43:54.065+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+[2025-04-29T09:43:54.066+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+[2025-04-29T09:43:54.066+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MemoryStore: Block broadcast_0_piece0 of size 7145 dropped from memory (free 2388209118)
+[2025-04-29T09:43:54.067+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 trying to remove block broadcast_0_piece0
+[2025-04-29T09:43:54.068+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, 989354eecf05, 45953, None)
+[2025-04-29T09:43:54.070+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 989354eecf05:45953 in memory (size: 7.0 KiB, free: 2.2 GiB)
+[2025-04-29T09:43:54.075+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.076+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.078+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.078+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.081+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.082+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.084+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.085+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 15-16
+[2025-04-29T09:43:54.086+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 2-3
+[2025-04-29T09:43:54.087+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 4-5
+[2025-04-29T09:43:54.087+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 0-1
+[2025-04-29T09:43:54.088+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 5-6
+[2025-04-29T09:43:54.089+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 8-9
+[2025-04-29T09:43:54.089+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 9-10
+[2025-04-29T09:43:54.090+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.091+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 14-15
+[2025-04-29T09:43:54.091+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.092+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 12-13
+[2025-04-29T09:43:54.092+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.094+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 6-7
+[2025-04-29T09:43:54.095+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+[2025-04-29T09:43:54.096+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Told master about block broadcast_0_piece0
+[2025-04-29T09:43:54.097+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Removing block broadcast_0
+[2025-04-29T09:43:54.097+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.098+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 10-11
+[2025-04-29T09:43:54.099+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.100+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 1-2
+[2025-04-29T09:43:54.100+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+[2025-04-29T09:43:54.101+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.102+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.102+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 11-12
+[2025-04-29T09:43:54.103+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+[2025-04-29T09:43:54.104+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 7-8
+[2025-04-29T09:43:54.105+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MemoryStore: Block broadcast_0 of size 11184 dropped from memory (free 2388220302)
+[2025-04-29T09:43:54.106+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task -1024 trying to remove block broadcast_0
+[2025-04-29T09:43:54.107+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.108+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 3-4
+[2025-04-29T09:43:54.108+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManagerStorageEndpoint: Done removing broadcast 0, response is 0
+[2025-04-29T09:43:54.109+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManagerStorageEndpoint: Sent response: 0 to 989354eecf05:38145
+[2025-04-29T09:43:54.109+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+[2025-04-29T09:43:54.110+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-16, partitions 13-14
+[2025-04-29T09:43:54.110+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ContextCleaner: Cleaned broadcast 0
+[2025-04-29T09:43:54.127+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.128+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.129+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.129+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.130+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.131+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.131+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.132+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.132+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.133+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.134+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.134+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.134+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.135+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.135+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.136+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+[2025-04-29T09:43:54.138+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.140+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.141+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.142+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.142+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.143+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.144+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 5 (400.0 B) non-empty blocks including 5 (400.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.144+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.145+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 2 (160.0 B) non-empty blocks including 2 (160.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.145+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.146+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.149+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.150+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.151+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.152+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+[2025-04-29T09:43:54.152+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:43:54.153+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+[2025-04-29T09:43:54.154+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+[2025-04-29T09:43:54.154+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+[2025-04-29T09:43:54.155+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+[2025-04-29T09:43:54.155+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+[2025-04-29T09:43:54.156+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+[2025-04-29T09:43:54.156+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 1 (80.0 B) non-empty blocks including 1 (80.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.156+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:43:54.157+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.157+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.158+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.158+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.159+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+[2025-04-29T09:43:54.159+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-04-29T09:43:54.160+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_15_12,15)
+[2025-04-29T09:43:54.160+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_3_15,3)
+[2025-04-29T09:43:54.161+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+[2025-04-29T09:43:54.161+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.162+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.163+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+[2025-04-29T09:43:54.163+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.169+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.170+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_1_5,1), (shuffle_0_4_5,4), (shuffle_0_7_5,7), (shuffle_0_11_5,11), (shuffle_0_14_5,14)
+[2025-04-29T09:43:54.171+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+[2025-04-29T09:43:54.171+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_6_14,6)
+[2025-04-29T09:43:54.171+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 20 ms
+[2025-04-29T09:43:54.172+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_9_2,9), (shuffle_0_12_2,12)
+[2025-04-29T09:43:54.172+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 20 ms
+[2025-04-29T09:43:54.173+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 12 ms
+[2025-04-29T09:43:54.173+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 20 ms
+[2025-04-29T09:43:54.174+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_1_5
+[2025-04-29T09:43:54.174+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_9_2
+[2025-04-29T09:43:54.175+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_15_12
+[2025-04-29T09:43:54.175+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_3_15
+[2025-04-29T09:43:54.176+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 15 ms
+[2025-04-29T09:43:54.176+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+[2025-04-29T09:43:54.176+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.177+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:43:54.177+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 8 ms
+[2025-04-29T09:43:54.178+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 20 ms
+[2025-04-29T09:43:54.178+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:43:54.179+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.179+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 11 ms
+[2025-04-29T09:43:54.179+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 21 ms
+[2025-04-29T09:43:54.180+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_6_14
+[2025-04-29T09:43:54.181+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 20 ms
+[2025-04-29T09:43:54.182+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks:
+[2025-04-29T09:43:54.183+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 21 ms
+[2025-04-29T09:43:54.185+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 17 ms
+[2025-04-29T09:43:54.187+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 10 ms
+[2025-04-29T09:43:54.188+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 16 ms
+[2025-04-29T09:43:54.189+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_12_2
+[2025-04-29T09:43:54.191+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 23 ms
+[2025-04-29T09:43:54.193+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_4_5
+[2025-04-29T09:43:54.203+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_7_5
+[2025-04-29T09:43:54.204+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_11_5
+[2025-04-29T09:43:54.205+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG BlockManager: Getting local shuffle block shuffle_0_14_5
+[2025-04-29T09:43:54.206+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 24 ms
+[2025-04-29T09:43:54.288+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 140, boot = -519, init = 658, finish = 1
+[2025-04-29T09:43:54.290+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 8.0 in stage 1.0 (TID 27). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.291+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 15
+[2025-04-29T09:43:54.291+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 15
+[2025-04-29T09:43:54.292+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG TaskSetManager: No tasks for locality level NODE_LOCAL, so moving to locality level NO_PREF
+[2025-04-29T09:43:54.292+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+[2025-04-29T09:43:54.293+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 27) in 313 ms on 989354eecf05 (executor driver) (1/16)
+[2025-04-29T09:43:54.303+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 150, boot = -535, init = 685, finish = 0
+[2025-04-29T09:43:54.307+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 152, boot = -542, init = 693, finish = 1
+[2025-04-29T09:43:54.308+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 14.0 in stage 1.0 (TID 19). 2108 bytes result sent to driver
+[2025-04-29T09:43:54.308+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 14
+[2025-04-29T09:43:54.309+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 155, boot = -543, init = 698, finish = 0
+[2025-04-29T09:43:54.310+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 155, boot = -406, init = 560, finish = 1
+[2025-04-29T09:43:54.310+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 0.0 in stage 1.0 (TID 21). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.311+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 14.0 in stage 1.0 (TID 19) in 330 ms on 989354eecf05 (executor driver) (2/16)
+[2025-04-29T09:43:54.311+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 13
+[2025-04-29T09:43:54.312+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 11.0 in stage 1.0 (TID 30). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.312+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 21) in 329 ms on 989354eecf05 (executor driver) (3/16)
+[2025-04-29T09:43:54.313+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 12
+[2025-04-29T09:43:54.313+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 30) in 326 ms on 989354eecf05 (executor driver) (4/16)
+[2025-04-29T09:43:54.314+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 12.0 in stage 1.0 (TID 18). 2106 bytes result sent to driver
+[2025-04-29T09:43:54.314+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 11
+[2025-04-29T09:43:54.315+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 12.0 in stage 1.0 (TID 18) in 338 ms on 989354eecf05 (executor driver) (5/16)
+[2025-04-29T09:43:54.331+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 155, boot = -543, init = 698, finish = 0
+[2025-04-29T09:43:54.334+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 15.0 in stage 1.0 (TID 20). 2107 bytes result sent to driver
+[2025-04-29T09:43:54.337+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 10
+[2025-04-29T09:43:54.338+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 15.0 in stage 1.0 (TID 20) in 363 ms on 989354eecf05 (executor driver) (6/16)
+[2025-04-29T09:43:54.338+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 175, boot = -526, init = 701, finish = 0
+[2025-04-29T09:43:54.339+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE BlockInfoManager: Task 26 releasing lock for broadcast_1
+[2025-04-29T09:43:54.340+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 7.0 in stage 1.0 (TID 26). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.342+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 9
+[2025-04-29T09:43:54.343+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 26) in 363 ms on 989354eecf05 (executor driver) (7/16)
+[2025-04-29T09:43:54.343+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 195, boot = -510, init = 705, finish = 0
+[2025-04-29T09:43:54.344+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 4.0 in stage 1.0 (TID 24). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.344+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 8
+[2025-04-29T09:43:54.346+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 199, boot = -512, init = 711, finish = 0
+[2025-04-29T09:43:54.349+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 6.0 in stage 1.0 (TID 25). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.350+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 7
+[2025-04-29T09:43:54.357+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 24) in 377 ms on 989354eecf05 (executor driver) (8/16)
+[2025-04-29T09:43:54.359+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 25) in 378 ms on 989354eecf05 (executor driver) (9/16)
+[2025-04-29T09:43:54.378+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 227, boot = -530, init = 757, finish = 0
+[2025-04-29T09:43:54.383+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 226, boot = -514, init = 739, finish = 1
+[2025-04-29T09:43:54.384+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 10.0 in stage 1.0 (TID 29). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.384+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 6
+[2025-04-29T09:43:54.385+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 5.0 in stage 1.0 (TID 17). 2107 bytes result sent to driver
+[2025-04-29T09:43:54.385+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 5
+[2025-04-29T09:43:54.386+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 29) in 398 ms on 989354eecf05 (executor driver) (10/16)
+[2025-04-29T09:43:54.386+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 17) in 416 ms on 989354eecf05 (executor driver) (11/16)
+[2025-04-29T09:43:54.432+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 286, boot = -548, init = 834, finish = 0
+[2025-04-29T09:43:54.434+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 1.0 in stage 1.0 (TID 22). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.434+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 4
+[2025-04-29T09:43:54.435+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 22) in 461 ms on 989354eecf05 (executor driver) (12/16)
+[2025-04-29T09:43:54.441+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 293, boot = -469, init = 762, finish = 0
+[2025-04-29T09:43:54.444+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 2.0 in stage 1.0 (TID 16). 2147 bytes result sent to driver
+[2025-04-29T09:43:54.445+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 3
+[2025-04-29T09:43:54.446+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 16) in 479 ms on 989354eecf05 (executor driver) (13/16)
+[2025-04-29T09:43:54.450+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 303, boot = -515, init = 818, finish = 0
+[2025-04-29T09:43:54.452+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 9.0 in stage 1.0 (TID 28). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.452+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+[2025-04-29T09:43:54.453+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 28) in 475 ms on 989354eecf05 (executor driver) (14/16)
+[2025-04-29T09:43:54.457+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 312, boot = -548, init = 859, finish = 1
+[2025-04-29T09:43:54.459+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 13.0 in stage 1.0 (TID 31). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.460+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+[2025-04-29T09:43:54.462+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 13.0 in stage 1.0 (TID 31) in 481 ms on 989354eecf05 (executor driver) (15/16)
+[2025-04-29T09:43:54.488+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO PythonRunner: Times: total = 343, boot = -516, init = 858, finish = 1
+[2025-04-29T09:43:54.490+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO Executor: Finished task 3.0 in stage 1.0 (TID 23). 2057 bytes result sent to driver
+[2025-04-29T09:43:54.491+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 0
+[2025-04-29T09:43:54.491+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 23) in 516 ms on 989354eecf05 (executor driver) (16/16)
+[2025-04-29T09:43:54.492+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-04-29T09:43:54.492+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO DAGScheduler: ResultStage 1 (collect at /opt/***/jobs/wordcount.py:24) finished in 0.544 s
+[2025-04-29T09:43:54.495+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG DAGScheduler: After removal of stage 1, remaining stages = 1
+[2025-04-29T09:43:54.496+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+[2025-04-29T09:43:54.496+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-04-29T09:43:54.497+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+[2025-04-29T09:43:54.498+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO DAGScheduler: Job 0 finished: collect at /opt/***/jobs/wordcount.py:24, took 2.786732 s
+[2025-04-29T09:43:54.503+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Creating listening socket
+[2025-04-29T09:43:54.503+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Setting timeout to 15 sec
+[2025-04-29T09:43:54.504+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Waiting for connection on localhost/127.0.0.1 with port 37065
+[2025-04-29T09:43:54.514+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Connection accepted from address /127.0.0.1:41362
+[2025-04-29T09:43:54.515+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Client authenticated
+[2025-04-29T09:43:54.516+0000] {spark_submit.py:644} INFO - Airflow 1
+[2025-04-29T09:43:54.517+0000] {spark_submit.py:644} INFO - Docker 1
+[2025-04-29T09:43:54.517+0000] {spark_submit.py:644} INFO - Hello 5
+[2025-04-29T09:43:54.518+0000] {spark_submit.py:644} INFO - Nhat 1
+[2025-04-29T09:43:54.518+0000] {spark_submit.py:644} INFO - Python 1
+[2025-04-29T09:43:54.518+0000] {spark_submit.py:644} INFO - Spark 1
+[2025-04-29T09:43:54.519+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 TRACE SocketFuncServer: Closing server
+[2025-04-29T09:43:54.519+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-04-29T09:43:54.528+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO SparkUI: Stopped Spark web UI at http://989354eecf05:4040
+[2025-04-29T09:43:54.554+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-04-29T09:43:54.575+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO MemoryStore: MemoryStore cleared
+[2025-04-29T09:43:54.576+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO BlockManager: BlockManager stopped
+[2025-04-29T09:43:54.579+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-04-29T09:43:54.581+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-04-29T09:43:54.591+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:54 INFO SparkContext: Successfully stopped SparkContext
+[2025-04-29T09:43:55.610+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 INFO ShutdownHookManager: Shutdown hook called
+[2025-04-29T09:43:55.611+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 INFO ShutdownHookManager: Deleting directory /tmp/spark-dc16adbf-fc44-417b-a8fb-8c2c1a048690/pyspark-12d4235b-6459-4e18-9a39-ed931bda2d32
+[2025-04-29T09:43:55.616+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 INFO ShutdownHookManager: Deleting directory /tmp/spark-370cf74c-24e2-4050-8d0f-5fcbc865a7e9
+[2025-04-29T09:43:55.621+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 INFO ShutdownHookManager: Deleting directory /tmp/spark-dc16adbf-fc44-417b-a8fb-8c2c1a048690
+[2025-04-29T09:43:55.626+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 DEBUG ShutdownHookManager: Completed shutdown in 0.019 seconds; Timeouts: 0
+[2025-04-29T09:43:55.641+0000] {spark_submit.py:644} INFO - 25/04/29 09:43:55 DEBUG ShutdownHookManager: ShutdownHookManager completed shutdown.
+[2025-04-29T09:43:55.717+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-29T09:43:55.717+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=spark_***, task_id=spark_wordcount, run_id=manual__2025-04-29T09:43:44.365952+00:00, execution_date=20250429T094344, start_date=20250429T094347, end_date=20250429T094355
+[2025-04-29T09:43:55.757+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/listener.py:477: DeprecationWarning: This process (pid=106) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:43:55.773+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:43:55.893+0000] {adapter.py:162} INFO - Successfully emitted OpenLineage `COMPLETE` event of id `019680ee-51ed-7547-b588-7fe2e2328d6d`
+[2025-04-29T09:43:55.945+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-29T09:43:55.960+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-29T09:43:55.962+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

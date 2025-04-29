@@ -1,0 +1,97 @@
+[2025-04-29T09:16:55.891+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-29T09:16:55.904+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:16:54.154771+00:00 [queued]>
+[2025-04-29T09:16:55.911+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:16:54.154771+00:00 [queued]>
+[2025-04-29T09:16:55.912+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-29T09:16:55.923+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): spark_wordcount_bash> on 2025-04-29 09:16:54.154771+00:00
+[2025-04-29T09:16:55.928+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=272) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:16:55.929+0000] {standard_task_runner.py:72} INFO - Started process 296 to run task
+[2025-04-29T09:16:55.929+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'spark_***', 'spark_wordcount_bash', 'manual__2025-04-29T09:16:54.154771+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/spark_***.py', '--cfg-path', '/tmp/tmpy09tcrx_']
+[2025-04-29T09:16:55.931+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask spark_wordcount_bash
+[2025-04-29T09:16:55.966+0000] {task_command.py:467} INFO - Running <TaskInstance: spark_airflow.spark_wordcount_bash manual__2025-04-29T09:16:54.154771+00:00 [running]> on host dc67005ed844
+[2025-04-29T09:16:56.031+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='spark_***' AIRFLOW_CTX_TASK_ID='spark_wordcount_bash' AIRFLOW_CTX_EXECUTION_DATE='2025-04-29T09:16:54.154771+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-29T09:16:54.154771+00:00'
+[2025-04-29T09:16:56.036+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/listener.py:477: DeprecationWarning: This process (pid=296) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-29T09:16:56.058+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:16:56.070+0000] {adapter.py:169} WARNING - Failed to emit OpenLineage `START` event of id `019680d5-c00a-74e7-93e6-388a3dbafb90` with the following exception: `HTTPConnectionPool(host='host.docker.internal', port=5000): Max retries exceeded with url: /api/v1/lineage (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5125b24560>: Failed to establish a new connection: [Errno 101] Network is unreachable'))`
+[2025-04-29T09:16:56.090+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-29T09:16:56.093+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-29T09:16:56.094+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec sparkflow-spark-master spark-submit --master spark://sparkflow-spark-master:7077 --num-executors 2 --total-executor-cores 4 --executor-cores 2 --executor-memory 4g --driver-memory 4g --name ***-spark --deploy-mode client ./jobs/wordcount.py']
+[2025-04-29T09:16:56.102+0000] {subprocess.py:99} INFO - Output:
+[2025-04-29T09:16:56.115+0000] {subprocess.py:106} INFO - Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[2025-04-29T09:16:56.116+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2025-04-29T09:16:56.125+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-29T09:16:56.142+0000] {client.py:121} INFO - OpenLineageClient will use `http` transport
+[2025-04-29T09:16:56.154+0000] {adapter.py:169} WARNING - Failed to emit OpenLineage `FAIL` event of id `019680d5-c00a-74e7-93e6-388a3dbafb90` with the following exception: `HTTPConnectionPool(host='host.docker.internal', port=5000): Max retries exceeded with url: /api/v1/lineage (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5125b63770>: Failed to establish a new connection: [Errno 101] Network is unreachable'))`
+[2025-04-29T09:16:56.186+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=spark_***, task_id=spark_wordcount_bash, run_id=manual__2025-04-29T09:16:54.154771+00:00, execution_date=20250429T091654, start_date=20250429T091655, end_date=20250429T091656
+[2025-04-29T09:16:56.206+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-29T09:16:56.207+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task spark_wordcount_bash (Bash command failed. The command returned a non-zero exit code 1.; 296)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-29T09:16:56.228+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-29T09:16:56.242+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-29T09:16:56.244+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
